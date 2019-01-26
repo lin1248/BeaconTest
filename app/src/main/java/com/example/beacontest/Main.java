@@ -36,6 +36,7 @@ public class Main extends AppCompatActivity {
             String str = str2HexStr(scanRecord);
             String str2 = str.substring(0,8);
             String txPower;
+            double accuracy;
             Message msg1 = Message.obtain();
             Message msg2 = Message.obtain();
             int intTxPower;
@@ -48,10 +49,11 @@ public class Main extends AppCompatActivity {
                             +"device:" + device.getName() +  "RSSI:" + rssi + " Address:" + device.getAddress()+"\r\n"
                             +"广播包: " + str + "\r\n"
                             +"txPower: " + intTxPower + "dB");
-
+                    accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
                     msg1.what = 1;
                     msg1.arg1 = intTxPower;
                     msg1.arg2 = rssi;
+                    msg1.obj = accuracy;
                     myHanlder.sendMessage(msg1);
                 }
                 else{
@@ -70,9 +72,11 @@ public class Main extends AppCompatActivity {
                             + "device:" + device.getName() + "RSSI:" + rssi + " Address:" + device.getAddress() + "\r\n"
                             + "广播包: " + str + "\r\n"
                             + "txPower: " + intTxPower + "dB");
+                    accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
                     msg2.what = 2;
                     msg2.arg1 = intTxPower;
                     msg2.arg2 = rssi;
+                    msg2.obj = accuracy;
                     myHanlder.sendMessage(msg2);
                 }
                 else{
@@ -197,10 +201,10 @@ public class Main extends AppCompatActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
-                    tv1.setText("A7F3::: txPower：" + msg.arg1 + "dB\r\n" + "RSSI: " + msg.arg2 + "dB");
+                    tv1.setText("A7F3::: txPower：" + msg.arg1 + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj);
                     break;
                 case 2:
-                    tv2.setText("ADD7::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB");
+                    tv2.setText("ADD7::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj);
                     break;
 
             }
