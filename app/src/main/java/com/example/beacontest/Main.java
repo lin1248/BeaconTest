@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,6 +24,8 @@ public class Main extends AppCompatActivity {
     private static final int REQUEST_COARSE_LOCATION = 3;
     private static final String mAdress_ADD7 = "30:45:11:5D:AD:D7";
     private static final String mAdress_A7F3 = "30:45:11:5D:A7:F3";
+    private TextView tv1,tv2;
+    MyHanlder myHanlder = new MyHanlder();
 
     /**
      * 获取蓝牙广播包
@@ -30,21 +35,52 @@ public class Main extends AppCompatActivity {
         public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
             String str = str2HexStr(scanRecord);
             String str2 = str.substring(0,8);
-            Log.d(TAG_1, "onLeScan: "+str2+":::");
+            String txPower;
+            Message msg1 = Message.obtain();
+            Message msg2 = Message.obtain();
+            int intTxPower;
+           // Log.d(TAG_1, "onLeScan: "+str2+":::");
             if (device.getAddress().equals(mAdress_A7F3)  ){
+                txPower = str.substring(87,89);
+                intTxPower = txPowerTransfer(txPower , "A7F3");
+                if( intTxPower < 0) {
+                    Log.i(TAG_1, "onLeScan: 发现A7F3\r\n"
+                            +"device:" + device.getName() +  "RSSI:" + rssi + " Address:" + device.getAddress()+"\r\n"
+                            +"广播包: " + str + "\r\n"
+                            +"txPower: " + intTxPower + "dB");
 
-                Log.i(TAG_1, "onLeScan: 发现A7F3");
-                Log.i(TAG_1, "onLeScan: device:" + device.getName() + " RSSI:" + rssi + " Address:" + device.getAddress() );
-                Log.i(TAG_1, "onLeScan: " + ":::" + str);
-
+                    msg1.what = 1;
+                    msg1.arg1 = intTxPower;
+                    msg1.arg2 = rssi;
+                    myHanlder.sendMessage(msg1);
+                }
+                else{
+                    Log.e(TAG_1, "onLeScan: 发现A7F3\r\n"
+                            +"device:" + device.getName() +  "RSSI:" + rssi + " Address:" + device.getAddress()+"\r\n"
+                            +"广播包: " + str + "\r\n"
+                            +"txPower: " + intTxPower + "dB");
+                }
             }
 
             if(device.getAddress().equals(mAdress_ADD7)){
-
-                Log.i(TAG_1, "onLeScan: 发现ADD7");
-                Log.i(TAG_1, "onLeScan: device:" + device.getName() + " RSSI:" + rssi + " Address:" + device.getAddress() );
-                Log.i(TAG_1, "onLeScan: " + ":::" + str);
-
+                txPower = str.substring(87,89);
+                intTxPower = txPowerTransfer(txPower , "ADD7");
+                if( intTxPower < 0 ) {
+                    Log.i(TAG_1, "onLeScan: 发现ADD7\r\n"
+                            + "device:" + device.getName() + "RSSI:" + rssi + " Address:" + device.getAddress() + "\r\n"
+                            + "广播包: " + str + "\r\n"
+                            + "txPower: " + intTxPower + "dB");
+                    msg2.what = 2;
+                    msg2.arg1 = intTxPower;
+                    msg2.arg2 = rssi;
+                    myHanlder.sendMessage(msg2);
+                }
+                else{
+                    Log.e(TAG_1, "onLeScan: 发现ADD7\r\n"
+                            + "device:" + device.getName() + "RSSI:" + rssi + " Address:" + device.getAddress() + "\r\n"
+                            + "广播包: " + str + "\r\n"
+                            + "txPower: " + intTxPower + "dB");
+                }
             }
 
 
@@ -55,6 +91,8 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv1 = findViewById(R.id.Tv);
+        tv2 = findViewById(R.id.Tv2);
         if (Build.VERSION.SDK_INT >= 6.0) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_COARSE_LOCATION);
@@ -138,11 +176,9 @@ public class Main extends AppCompatActivity {
 
         char[] chars = "0123456789ABCDEF".toCharArray();
         StringBuilder sb = new StringBuilder("");
-        /*byte[] bs = str.getBytes();*/
         int bit;
 
         for (int i = 0; i < bs.length; i++) {
-            String str;
             bit = (bs[i] & 0x0f0) >> 4;
             sb.append(chars[bit]);
             bit = bs[i] & 0x0f;
@@ -152,4 +188,40 @@ public class Main extends AppCompatActivity {
         return sb.toString().trim();
     }
 
+    /**
+     * 更新UI
+     */
+    class MyHanlder extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    tv1.setText("A7F3::: txPower：" + msg.arg1 + "dB\r\n" + "RSSI: " + msg.arg2 + "dB");
+                    break;
+                case 2:
+                    tv2.setText("ADD7::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB");
+                    break;
+
+            }
+        }
+    }
+
+    /**
+     * 发射强度的补码转化为原码
+     */
+    public static Integer txPowerTransfer (String txPower , String id){
+        int num = Integer.parseInt(txPower,16);
+        int symbol = num >> 7;
+        if(symbol == 1) {
+            num = (num - 1) ^ 0xff;
+            num = 0 - num;
+            Log.i(TAG_1, "txPowerTransfer: " + id + ":" + num);
+        }
+        else {
+            num = (num - 1) ^ 0xff;
+            Log.e(TAG_1, "txPowerTransfer: " + "ID: " + id + "原始数据： " + txPower + "转换后数据: " + num );
+        }
+        return num;
+    }
 }

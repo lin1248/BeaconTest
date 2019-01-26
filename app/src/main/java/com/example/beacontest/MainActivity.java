@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView1;
     private Button btn;
     private final int MY_PERMISSION_REQUEST_CONSTANT = 2;
+    private static final int REQUEST_COARSE_LOCATION = 0;
     private IntentFilter filter,filter1;
 
     @Override
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSION_REQUEST_CONSTANT);
             Log.i(TAG_1, "onCreate: 获取运行时权限");
+
         }
         lisetView =  findViewById(R.id.Lv);
         textView1 =  findViewById(R.id.Tv);
@@ -74,6 +77,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    //申请位置定位运行时权限
+/*    private void mayRequestLocation() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            int checkCallPhonePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+            if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+                //判断是否需要 向用户解释，为什么要申请该权限
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION))
+                    Toast.makeText(this, "动态请求权限", Toast.LENGTH_LONG).show();
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, REQUEST_COARSE_LOCATION);
+                return;
+            } else {
+
+            }
+        } else {
+
+        }
+    }*/
 
 
     //初始化蓝牙设备
@@ -115,17 +136,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-/*    //搜索蓝牙设备
-    private void discovering_devices() {
-        if (mBluetoothAdapter == null)
-            init_bluetooth();
-
-        if (mBluetoothAdapter.startDiscovery()) {
-            Toast.makeText(this, "正在搜索蓝牙设备！", Toast.LENGTH_SHORT).show();
-            Log.i(TAG_1, "正在搜索蓝牙设备！ ");
-        }
-    }*/
-
     /**
      * 注册异步搜索蓝牙设备的广播
      */
@@ -164,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                     lisetView.setAdapter(adapter);
 
                     Log.i(TAG_1, "onReceive: " + mBlueList.size());
-                    Log.i(TAG_1, "onReceive: " + (device.getName() + ":" + device.getAddress() + " ：" + "m" + "\n"));
+                    Log.i(TAG_1, "onReceive: " + (device.getName() + ":" + device.getAddress() +  "m" + "\n"));
                 }
                 // 搜索完成
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
@@ -202,4 +212,13 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG_1, "onDestroy: 取消注册广播接收器");
     }
 
+    /**
+        获取蓝牙广播包
+     **/
+    private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+            Log.i(TAG_1, "onLeScan: device:"+device.getName()+" RSSI:"+rssi+"");
+        }
+    };
 }

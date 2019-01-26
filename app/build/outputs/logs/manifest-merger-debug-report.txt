@@ -90,10 +90,10 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.grad
 		ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:17:9-40
-activity#com.example.beacontest.MainActivity
+activity#com.example.beacontest.Main
 ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:18:19-47
+		ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:18:19-39
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Work\GraduationProject\BeaconTest\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN

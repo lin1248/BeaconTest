@@ -9,11 +9,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class MyAdapter extends BaseAdapter {
 
     private List<BluetoothDevice> mBluelist;
+    //private List<Integer> mRSSIS; //获取广播包新加
+    //private List<byte []> mRecords;//新加
     private LayoutInflater layoutInflater;
 
     public MyAdapter(Context context, List<BluetoothDevice> list) {
@@ -47,6 +50,7 @@ class MyAdapter extends BaseAdapter {
             viewHolder.deviceAddress = view.findViewById(R.id.device_address);
             viewHolder.deviceType = view.findViewById(R.id.device_type);
             viewHolder.deviceState = view.findViewById(R.id.device_state);
+            viewHolder.deviceScanRecord=view.findViewById(R.id.device_scanRecord);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
@@ -92,5 +96,8 @@ class MyAdapter extends BaseAdapter {
         TextView deviceAddress;
         TextView deviceType;
         TextView deviceState;
+        TextView deviceScanRecord;
     }
+
+
 }
