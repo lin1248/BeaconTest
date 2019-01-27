@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Thu Jan 24 21:55:06 CST 2019
+#Sun Jan 27 17:00:01 CST 2019
 0.baseType=DIRECTORY
-0.base=D\:\\Work\\GraduationProject\\BeaconTest\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.base=D\:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex
 0.set=DEX
 count=1

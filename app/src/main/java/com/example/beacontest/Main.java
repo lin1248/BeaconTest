@@ -26,6 +26,8 @@ public class Main extends AppCompatActivity {
     private static final String mAdress_A7F3 = "30:45:11:5D:A7:F3";
     private TextView tv1,tv2;
     MyHanlder myHanlder = new MyHanlder();
+    private static int i = 0;
+    private static int j = 0;
 
     /**
      * 获取蓝牙广播包
@@ -45,10 +47,13 @@ public class Main extends AppCompatActivity {
                 txPower = str.substring(87,89);
                 intTxPower = txPowerTransfer(txPower , "A7F3");
                 if( intTxPower < 0) {
+                    if(i++ < 20)
+                        Log.i(TAG_1, "onLeScan: A7F3:getRSSI" + rssi);
                     Log.i(TAG_1, "onLeScan: 发现A7F3\r\n"
-                            +"device:" + device.getName() +  "RSSI:" + rssi + " Address:" + device.getAddress()+"\r\n"
+                            +"device:" + device.getName() + " Address:" + device.getAddress()+"\r\n"
                             +"广播包: " + str + "\r\n"
                             +"txPower: " + intTxPower + "dB");
+
                     accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
                     msg1.what = 1;
                     msg1.arg1 = intTxPower;
@@ -68,10 +73,13 @@ public class Main extends AppCompatActivity {
                 txPower = str.substring(87,89);
                 intTxPower = txPowerTransfer(txPower , "ADD7");
                 if( intTxPower < 0 ) {
+                    if(j++ < 20)
+                        Log.i(TAG_1, "onLeScan: ADD7:getRSSI" + rssi);
                     Log.i(TAG_1, "onLeScan: 发现ADD7\r\n"
-                            + "device:" + device.getName() + "RSSI:" + rssi + " Address:" + device.getAddress() + "\r\n"
+                            + "device:" + device.getName() + " Address:" + device.getAddress() + "\r\n"
                             + "广播包: " + str + "\r\n"
                             + "txPower: " + intTxPower + "dB");
+
                     accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
                     msg2.what = 2;
                     msg2.arg1 = intTxPower;
@@ -201,9 +209,11 @@ public class Main extends AppCompatActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
+
                     tv1.setText("A7F3::: txPower：" + msg.arg1 + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj);
                     break;
                 case 2:
+
                     tv2.setText("ADD7::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj);
                     break;
 

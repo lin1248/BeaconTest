@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\GraduationProject\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
+            "outputFile": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1627070facb5754f1eb61f3b8714a90e\\res\\values-th\\values-th.xml",

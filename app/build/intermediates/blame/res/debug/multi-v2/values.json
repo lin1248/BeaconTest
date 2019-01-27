@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\GraduationProject\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\Work\\GraduationProject\\BeaconTest\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -42,7 +42,24 @@
                     }
                 },
                 {
-                    "source": "D:\\Work\\GraduationProject\\BeaconTest\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,66",
+                        "endColumns": "47,39",
+                        "endOffsets": "60,101"
+                    },
+                    "to": {
+                        "startLines": "377,378",
+                        "startColumns": "4,4",
+                        "startOffsets": "22533,22581",
+                        "endColumns": "47,39",
+                        "endOffsets": "22576,22616"
+                    }
+                },
+                {
+                    "source": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "4,2,3",
                         "startColumns": "4,4,4",
@@ -75,23 +92,6 @@
                         "endLines": "15,1852,2559,2648",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "720,122493,166430,171641"
-                    }
-                },
-                {
-                    "source": "D:\\Work\\GraduationProject\\BeaconTest\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "17,66",
-                        "endColumns": "47,39",
-                        "endOffsets": "60,101"
-                    },
-                    "to": {
-                        "startLines": "377,378",
-                        "startColumns": "4,4",
-                        "startOffsets": "22533,22581",
-                        "endColumns": "47,39",
-                        "endOffsets": "22576,22616"
                     }
                 },
                 {
