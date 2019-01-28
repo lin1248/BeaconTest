@@ -1,4 +1,4 @@
-#Sun Jan 27 17:00:01 CST 2019
+#Mon Jan 28 20:43:35 CST 2019
 base.0=D\:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

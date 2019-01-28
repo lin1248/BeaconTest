@@ -25,6 +25,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 搜索附近蓝牙
+ */
 public class MainActivity extends AppCompatActivity {
     BluetoothAdapter mBluetoothAdapter;
     private static final int request_enabled = 1;//定义一个int resultCode

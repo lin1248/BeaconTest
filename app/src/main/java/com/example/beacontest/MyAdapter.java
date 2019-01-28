@@ -12,6 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ListView适配器
+ */
 class MyAdapter extends BaseAdapter {
 
     private List<BluetoothDevice> mBluelist;
