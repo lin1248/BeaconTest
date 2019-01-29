@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BeaconTest</string>
     <string name="search">搜索蓝牙</string>
+    <string name="rotate">开始旋转</string>
 </resources>

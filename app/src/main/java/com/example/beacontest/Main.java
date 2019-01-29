@@ -56,7 +56,6 @@ public class Main extends AppCompatActivity {
             Message msg1 = Message.obtain();
             Message msg2 = Message.obtain();
             int intTxPower;
-            float num;
            // Log.d(TAG_1, "onLeScan: "+str2+":::");
             if (device.getAddress().equals(mAdress_A7F3)  ){
                 txPower = dataPacket.substring(87,89);

@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ListView适配器
+ * Li
+ *
+ * stView适配器
  */
 class MyAdapter extends BaseAdapter {
 

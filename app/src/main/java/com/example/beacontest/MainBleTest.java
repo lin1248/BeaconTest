@@ -12,7 +12,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +27,7 @@ import java.util.List;
 /**
  * 搜索附近蓝牙
  */
-public class MainActivity extends AppCompatActivity {
+public class MainBleTest extends AppCompatActivity {
     BluetoothAdapter mBluetoothAdapter;
     private static final int request_enabled = 1;//定义一个int resultCode
     private static final String TAG_1 = "BtTest";
@@ -173,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                         mBlueList.add(device);
                     }
                     textView1.setText("附近设备：" + mBlueList.size() + "个\u3000\u3000" );
-                    MyAdapter adapter = new MyAdapter(MainActivity.this, mBlueList);
+                    MyAdapter adapter = new MyAdapter(MainBleTest.this, mBlueList);
                     lisetView.setAdapter(adapter);
 
                     Log.i(TAG_1, "onReceive: " + mBlueList.size());
