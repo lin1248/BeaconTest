@@ -13,18 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Li
- *
- * stView适配器
+ * ListView适配器
  */
-class MyAdapter extends BaseAdapter {
+class ListViewAdapter extends BaseAdapter {
 
     private List<BluetoothDevice> mBluelist;
     //private List<Integer> mRSSIS; //获取广播包新加
     //private List<byte []> mRecords;//新加
     private LayoutInflater layoutInflater;
 
-    public MyAdapter(Context context, List<BluetoothDevice> list) {
+    public ListViewAdapter(Context context, List<BluetoothDevice> list) {
         this.mBluelist = list;
         this.layoutInflater = LayoutInflater.from(context);
     }

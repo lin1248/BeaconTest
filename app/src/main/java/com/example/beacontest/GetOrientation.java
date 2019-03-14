@@ -1,17 +1,20 @@
 package com.example.beacontest;
 
-public class GetOrientation {
-    String orientation = null;
-    private static String North = "北";
-    private static String South = "南";
-    private static String East = "东";
-    private static String West = "西";
-    private static String Northeast = "东北";
-    private static String Southwest = "西南";
-    private static String Southeast= "东南";
-    private static String Northwest = "西北";
+import android.text.StaticLayout;
 
-    protected String getStr(int alpha){
+import static com.example.beacontest.TAG.East;
+import static com.example.beacontest.TAG.North;
+import static com.example.beacontest.TAG.Northeast;
+import static com.example.beacontest.TAG.Northwest;
+import static com.example.beacontest.TAG.South;
+import static com.example.beacontest.TAG.Southeast;
+import static com.example.beacontest.TAG.Southwest;
+import static com.example.beacontest.TAG.West;
+
+ class GetOrientation {
+    private String orientation = null;
+
+     String getStr(int alpha){
         if((alpha>=0 && alpha<15) || (alpha>345 && alpha<=360)){
             orientation = North;
         }

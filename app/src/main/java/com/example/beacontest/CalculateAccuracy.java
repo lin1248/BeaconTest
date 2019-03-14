@@ -36,7 +36,7 @@ public class CalculateAccuracy {
      * @param rssi
      * @return
      */
-    protected static String formula_2( int rssi){
+     static String formula_2( int rssi){
         int iRssi = abs(rssi);
         float power = (float) ((iRssi - 61)/(10*2.0));
         float acc_f = (float) pow(10 , power);

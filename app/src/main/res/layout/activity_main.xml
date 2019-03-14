@@ -15,5 +15,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/Tv2"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Tv3"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Tv4"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Tv5"
+        />
+
 
 </LinearLayout>

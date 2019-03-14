@@ -172,7 +172,7 @@ public class MainBleTest extends AppCompatActivity {
                         mBlueList.add(device);
                     }
                     textView1.setText("附近设备：" + mBlueList.size() + "个\u3000\u3000" );
-                    MyAdapter adapter = new MyAdapter(MainBleTest.this, mBlueList);
+                    ListViewAdapter adapter = new ListViewAdapter(MainBleTest.this, mBlueList);
                     lisetView.setAdapter(adapter);
 
                     Log.i(TAG_1, "onReceive: " + mBlueList.size());

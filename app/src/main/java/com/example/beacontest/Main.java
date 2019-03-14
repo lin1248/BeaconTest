@@ -1,6 +1,7 @@
 package com.example.beacontest;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -21,27 +23,32 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.beacontest.Address.mAdress_7D19;
+import static com.example.beacontest.Address.mAdress_A7F3;
+import static com.example.beacontest.Address.mAdress_AD9F;
+import static com.example.beacontest.Address.mAdress_ADD7;
+import static com.example.beacontest.TAG.TAG_1;
+import static com.example.beacontest.TAG.TAG_2;
+
 
 public class Main extends AppCompatActivity {
     BluetoothAdapter mBluetoothAdapter;
+    private GetOrientation getOrientation =new GetOrientation();
     private static final int request_enabled = 1;//定义一个int resultCode
-    private static final String TAG_1 = "BtTest";
-    private static final String TAG_2 = "Orientation";
     private static final int REQUEST_COARSE_LOCATION = 3;
-    private static final String mAdress_ADD7 = "30:45:11:5D:AD:D7";
-    private static final String mAdress_A7F3 = "30:45:11:5D:A7:F3";
-    private TextView tv1,tv2;
+    private TextView tv1,tv2,tv3,tv4,tv5;
     MyHanlder myHanlder = new MyHanlder();
-    private static int i = 0;
-    private static int j = 0;
+    private static int i1 = 0;
+    private static int i2 = 0;
+    private static int i3 = 0;
+    private static int i4 = 0;
     private SensorManager sm=null;
-    private Sensor aSensor=null;
-    private Sensor mSensor=null;
-
     float[] accelerometerValues=new float[3];
     float[] magneticFieldValues=new float[3];
     float[] values=new float[3];
     float[] RValues=new float[9];
+
+
 
     /**
      * 提取蓝牙广播包数据
@@ -55,23 +62,23 @@ public class Main extends AppCompatActivity {
             String  accuracy;
             Message msg1 = Message.obtain();
             Message msg2 = Message.obtain();
+            Message msg3 = Message.obtain();
+            Message msg4 = Message.obtain();
             int intTxPower;
-           // Log.d(TAG_1, "onLeScan: "+str2+":::");
+            /*
+              发现A7F3
+              */
             if (device.getAddress().equals(mAdress_A7F3)  ){
                 txPower = dataPacket.substring(87,89);
                 intTxPower = txPowerTransfer(txPower , "A7F3");
                 if( intTxPower < 0) {
-                   if(i++ < 20)
+                   if(i1++ < 20)
                         Log.i(TAG_1, "onLeScan: A7F3:getRSSI" + rssi);
                     Log.i(TAG_1, "onLeScan: 发现A7F3\r\n"
                             +"device:" + device.getName() + " Address:" + device.getAddress()+"\r\n"
                             +"广播包: " + dataPacket + "\r\n"
                             +"txPower: " + intTxPower + "dB");
-
-                    //accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
-                    // formula_1
                     accuracy = CalculateAccuracy.formula_2(rssi);
-                    //formula_2
                     msg1.what = 1;
                     msg1.arg1 = intTxPower;
                     msg1.arg2 = rssi;
@@ -83,22 +90,20 @@ public class Main extends AppCompatActivity {
                 }
             }
 
+            /*
+             发现ADD7
+              */
             if(device.getAddress().equals(mAdress_ADD7)){
                 txPower = dataPacket.substring(87,89);
                 intTxPower = txPowerTransfer(txPower , "ADD7");
                 if( intTxPower < 0 ) {
-                    if(j++ < 20)
+                    if(i2++ < 20)
                         Log.i(TAG_1, "onLeScan: ADD7:getRSSI" + rssi);
                     Log.i(TAG_1, "onLeScan: 发现ADD7\r\n"
                             + "device:" + device.getName() + " Address:" + device.getAddress() + "\r\n"
                             + "广播包: " + dataPacket + "\r\n"
                             + "txPower: " + intTxPower + "dB");
-
-                    //accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
-                    // formula_1
                     accuracy = CalculateAccuracy.formula_2(rssi);
-                    //formula_2
-
                     msg2.what = 2;
                     msg2.arg1 = intTxPower;
                     msg2.arg2 = rssi;
@@ -110,6 +115,62 @@ public class Main extends AppCompatActivity {
                 }
             }
 
+            /*
+             发现AD9F
+              */
+            if(device.getAddress().equals(mAdress_AD9F)){
+                txPower = dataPacket.substring(87,89);
+                intTxPower = txPowerTransfer(txPower , "AD9F");
+                if( intTxPower < 0 ) {
+                    if(i3++ < 20)
+                        Log.i(TAG_1, "onLeScan: AD9F:getRSSI" + rssi);
+                    Log.i(TAG_1, "onLeScan: 发现AD9F\r\n"
+                            + "device:" + device.getName() + " Address:" + device.getAddress() + "\r\n"
+                            + "广播包: " + dataPacket + "\r\n"
+                            + "txPower: " + intTxPower + "dB");
+
+                    //accuracy = CalculateAccuracy.formula_1(intTxPower, rssi);
+                    // formula_1
+                    accuracy = CalculateAccuracy.formula_2(rssi);
+                    //formula_2
+
+                    msg3.what = 3;
+                    msg3.arg1 = intTxPower;
+                    msg3.arg2 = rssi;
+                    msg3.obj = accuracy;
+                    myHanlder.sendMessage(msg3);
+                }
+                else{
+                    Log.e(TAG_1, "onLeScan: 发现AD9F，无效数据包:" + dataPacket);
+                }
+            }
+
+            /*
+             发现7D19
+              */
+            if(device.getAddress().equals(mAdress_7D19)){
+                txPower = dataPacket.substring(87,89);
+                intTxPower = txPowerTransfer(txPower , "7D19");
+                if( intTxPower < 0 ) {
+                    if(i4++ < 20)
+                        Log.i(TAG_1, "onLeScan: 7D19:getRSSI" + rssi);
+                    Log.i(TAG_1, "onLeScan: 发现7D19\r\n"
+                            + "device:" + device.getName() + " Address:" + device.getAddress() + "\r\n"
+                            + "广播包: " + dataPacket + "\r\n"
+                            + "txPower: " + intTxPower + "dB");
+
+                    accuracy = CalculateAccuracy.formula_2(rssi);
+
+                    msg4.what = 4;
+                    msg4.arg1 = intTxPower;
+                    msg4.arg2 = rssi;
+                    msg4.obj = accuracy;
+                    myHanlder.sendMessage(msg4);
+                }
+                else{
+                    Log.e(TAG_1, "onLeScan: 发现7D19，无效数据包:" + dataPacket);
+                }
+            }
 
         }
     };
@@ -120,6 +181,9 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tv1 = findViewById(R.id.Tv);
         tv2 = findViewById(R.id.Tv2);
+        tv3 = findViewById(R.id.Tv3);
+        tv4 = findViewById(R.id.Tv4);
+        tv5 = findViewById(R.id.Tv5);
         if (Build.VERSION.SDK_INT >= 6.0) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_COARSE_LOCATION);
@@ -128,8 +192,8 @@ public class Main extends AppCompatActivity {
         }
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         sm=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
-        aSensor=sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensor=sm.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        Sensor aSensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Sensor mSensor = sm.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         sm.registerListener(myListener, aSensor, SensorManager.SENSOR_DELAY_GAME);
         sm.registerListener(myListener, mSensor, SensorManager.SENSOR_DELAY_GAME);
         //mBluetoothAdapter.startLeScan(mLeScanCallback);
@@ -158,6 +222,11 @@ public class Main extends AppCompatActivity {
             //转换为角度
             values[0]=(float)Math.toDegrees(values[0]);
             Log.i(TAG_2, "onSensorChanged: 方向：" + values[0]);
+            String str=getOrientation.getStr((int)values[0]);
+            Message msg5 = Message.obtain();
+            msg5.what = 5;
+            msg5.obj = str;
+            myHanlder.sendMessage(msg5);
         }
 
         @Override
@@ -166,7 +235,7 @@ public class Main extends AppCompatActivity {
         }
     };
     //获取运行时权限
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
 
         switch (requestCode) {
 
@@ -180,7 +249,6 @@ public class Main extends AppCompatActivity {
                 } else {
                     Log.i(TAG_1, "onRequestPermissionsResult: 获得定位权限失败");
                 }
-                return;
             }
         }
     }
@@ -254,7 +322,9 @@ public class Main extends AppCompatActivity {
     /**
      * 更新UI
      */
+    @SuppressLint("HandlerLeak")
     class MyHanlder extends Handler{
+        @SuppressLint("SetTextI18n")
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -269,6 +339,21 @@ public class Main extends AppCompatActivity {
 
                     tv2.setText("ADD7::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj + "m");
                     Log.i(TAG_1, "handleMessage: get ADD7 Accuracy:" + msg.obj);
+                    break;
+                case 3://AD9F
+
+                    tv3.setText("AD9F::: txPower：" + msg.arg1 + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj + "m");
+                    Log.i(TAG_1, "handleMessage: get AD9F Accuracy:" + msg.obj);
+                    break;
+                case 4://7D19
+
+                    tv4.setText("7D19::: txPower："+msg.arg1  + "dB\r\n" + "RSSI: " + msg.arg2 + "dB\r\n" + "距离： " + msg.obj + "m");
+                    Log.i(TAG_1, "handleMessage: get 7D19 Accuracy:" + msg.obj);
+                    break;
+                case 5:
+
+                    tv5.setText("方向："+msg.obj);
+                    Log.i(TAG_1, "Orientation is"+msg.obj);
                     break;
 
             }

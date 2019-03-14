@@ -3,8 +3,7 @@ package com.example.beacontest;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.util.Log;
-
-import static com.example.beacontest.MainRotateTest.TAG_3;
+import static com.example.beacontest.TAG.TAG_3;
 
 
 public class RotateBitmap {

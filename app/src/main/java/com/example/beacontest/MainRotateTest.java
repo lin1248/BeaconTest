@@ -23,6 +23,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.example.beacontest.TAG.TAG_3;
+
 
 public class MainRotateTest extends AppCompatActivity {
     private ImageView imageView;
@@ -30,7 +32,7 @@ public class MainRotateTest extends AppCompatActivity {
     private SensorManager sm=null;
     private Sensor aSensor=null;
     private Sensor mSensor=null;
-    protected static final String TAG_3 = "RotateTest";
+
     private Message msg_rotate;
     private Message msg_btnTextChange;
     private NewHandler newHandler = new NewHandler();
