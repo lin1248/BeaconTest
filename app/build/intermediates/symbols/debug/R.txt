@@ -854,6 +854,7 @@ int layout select_dialog_item_material 0x7f090026
 int layout select_dialog_multichoice_material 0x7f090027
 int layout select_dialog_singlechoice_material 0x7f090028
 int layout support_simple_spinner_dropdown_item 0x7f090029
+int layout test 0x7f09002a
 int mipmap ic_launcher 0x7f0a0000
 int mipmap ic_launcher_foreground 0x7f0a0001
 int mipmap ic_launcher_round 0x7f0a0002
