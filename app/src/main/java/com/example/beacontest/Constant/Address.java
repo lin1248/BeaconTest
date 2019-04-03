@@ -1,4 +1,4 @@
-package com.example.beacontest.constant;
+package com.example.beacontest.Constant;
 
 public class Address {
     public static final String mAdress_ADD7 = "30:45:11:5D:AD:D7";

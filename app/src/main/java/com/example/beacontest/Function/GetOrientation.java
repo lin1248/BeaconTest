@@ -1,13 +1,13 @@
 package com.example.beacontest.Function;
 
-import static com.example.beacontest.constant.TAG.East;
-import static com.example.beacontest.constant.TAG.North;
-import static com.example.beacontest.constant.TAG.Northeast;
-import static com.example.beacontest.constant.TAG.Northwest;
-import static com.example.beacontest.constant.TAG.South;
-import static com.example.beacontest.constant.TAG.Southeast;
-import static com.example.beacontest.constant.TAG.Southwest;
-import static com.example.beacontest.constant.TAG.West;
+import static com.example.beacontest.Constant.TAG.East;
+import static com.example.beacontest.Constant.TAG.North;
+import static com.example.beacontest.Constant.TAG.Northeast;
+import static com.example.beacontest.Constant.TAG.Northwest;
+import static com.example.beacontest.Constant.TAG.South;
+import static com.example.beacontest.Constant.TAG.Southeast;
+import static com.example.beacontest.Constant.TAG.Southwest;
+import static com.example.beacontest.Constant.TAG.West;
 
  public class GetOrientation {
     private String orientation = null;

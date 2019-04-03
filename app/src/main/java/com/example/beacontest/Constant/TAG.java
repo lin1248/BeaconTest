@@ -1,9 +1,4 @@
-package com.example.beacontest.constant;
-
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
-import java.util.ArrayList;
+package com.example.beacontest.Constant;
 
 public class TAG {
     public static final String TAG_1 = "BtTest";

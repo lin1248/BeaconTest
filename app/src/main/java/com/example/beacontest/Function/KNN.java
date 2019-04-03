@@ -2,17 +2,16 @@ package com.example.beacontest.Function;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.icu.util.LocaleData;
 import android.util.Log;
 
-import com.example.beacontest.constant.Coordinate;
+import com.example.beacontest.Constant.Coordinate;
 
 import java.util.ArrayList;
 
 
-import static com.example.beacontest.constant.TAG.TAG_5;
-import static com.example.beacontest.constant.TAG.dbPath;
-import static com.example.beacontest.constant.TAG.querryName;
+import static com.example.beacontest.Constant.TAG.TAG_5;
+import static com.example.beacontest.Constant.TAG.dbPath;
+import static com.example.beacontest.Constant.TAG.querryName;
 
 /**
  * KNN算法
@@ -20,7 +19,7 @@ import static com.example.beacontest.constant.TAG.querryName;
 public class KNN {
 
     private ArrayList<Coordinate> LocationPointSet=new ArrayList<>();
-
+    private Cursor cursor=null;
     /**
      * 获取定位点到各个指纹点的欧式距离的数据集(首次定位时使用)
      * @param RSSI_ADD7
@@ -37,27 +36,28 @@ public class KNN {
         int i=0;
         //数据库操作
         SQLiteDatabase db=SQLiteDatabase.openDatabase(dbPath,null,SQLiteDatabase.OPEN_READONLY);
-        Cursor cursor=db.rawQuery("select * from "+querryName,null);
-        if(cursor.moveToFirst()){
-            do{
-                x=cursor.getInt(cursor.getColumnIndex("x"));
-                y=cursor.getInt(cursor.getColumnIndex("y"));
-                _ADD7=cursor.getDouble(cursor.getColumnIndex("_ADD7"));
-                _A7F3=cursor.getDouble(cursor.getColumnIndex("_A7F3"));
-                _AD9F=cursor.getDouble(cursor.getColumnIndex("_AD9F"));
-                _7D19=cursor.getDouble(cursor.getColumnIndex("_7D19"));
-                result=Math.pow((_ADD7-RSSI_ADD7),2)+ Math.pow((_A7F3-RSSI_A7F3),2)+Math.pow((_AD9F-RSSI_AD9F),2)
-                        +Math.pow((_7D19-RSSI_7D19),2);
-                result= Math.sqrt(result);
-                dataSet[i]=new Coordinate();
-                dataSet[i].setX(x);
-                dataSet[i].setY(y);
-                dataSet[i].setEulideanDistance(result);//距离各个坐标点的欧式距离按坐标点顺序存入数据集中
-                i++;
-                Log.d(TAG_5, "getEulideanDistance: 距离坐标为（"+x+","+y+")的欧式距离为"+result+"//id:"+i);
-            }while(cursor.moveToNext());
-        }
-        cursor.close();
+            cursor = db.rawQuery("select * from " + querryName, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    x = cursor.getInt(cursor.getColumnIndex("x"));
+                    y = cursor.getInt(cursor.getColumnIndex("y"));
+                    _ADD7 = cursor.getDouble(cursor.getColumnIndex("_ADD7"));
+                    _A7F3 = cursor.getDouble(cursor.getColumnIndex("_A7F3"));
+                    _AD9F = cursor.getDouble(cursor.getColumnIndex("_AD9F"));
+                    _7D19 = cursor.getDouble(cursor.getColumnIndex("_7D19"));
+                    result = Math.pow((_ADD7 - RSSI_ADD7), 2) + Math.pow((_A7F3 - RSSI_A7F3), 2) + Math.pow((_AD9F - RSSI_AD9F), 2)
+                            + Math.pow((_7D19 - RSSI_7D19), 2);
+                    result = Math.sqrt(result);
+                    dataSet[i] = new Coordinate();
+                    dataSet[i].setX(x);
+                    dataSet[i].setY(y);
+                    dataSet[i].setEulideanDistance(result);//距离各个坐标点的欧式距离按坐标点顺序存入数据集中
+                    i++;
+                    Log.d(TAG_5, "getEulideanDistance: 距离坐标为（" + x + "," + y + ")的欧式距离为" + result + "//id:" + i);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            db.close();
         return dataSet;
     }
 
@@ -71,29 +71,36 @@ public class KNN {
      * @return
      */
     private ArrayList<Coordinate> getEulideanDistance(double RSSI_ADD7, double RSSI_A7F3, double RSSI_AD9F, double RSSI_7D19, ArrayList<Coordinate> NearPoint){
-        ArrayList<Coordinate> dataSet=null;
-        Coordinate usefulData=new Coordinate();
+        ArrayList<Coordinate> dataSet=new ArrayList<>();
+        Coordinate usefulData;
         double result;
         double x,y;
         double _ADD7,_A7F3,_AD9F,_7D19;
-        for(Coordinate a:NearPoint){
-            x=a.getX();
-            y=a.getY();
-            SQLiteDatabase db=SQLiteDatabase.openDatabase(dbPath,null,SQLiteDatabase.OPEN_READONLY);
-            Cursor cursor=db.rawQuery("select * from "+querryName+" where x='"+x+"' and y='"+y+"'",null);
-
-            _ADD7=cursor.getDouble(cursor.getColumnIndex("_ADD7"));
-            _A7F3=cursor.getDouble(cursor.getColumnIndex("_A7F3"));
-            _AD9F=cursor.getDouble(cursor.getColumnIndex("_AD9F"));
-            _7D19=cursor.getDouble(cursor.getColumnIndex("_7D19"));
-            result=Math.pow((_ADD7-RSSI_ADD7),2)+ Math.pow((_A7F3-RSSI_A7F3),2)+Math.pow((_AD9F-RSSI_AD9F),2)
-                    +Math.pow((_7D19-RSSI_7D19),2);
-            result= Math.sqrt(result);
-            usefulData.setX(x);
-            usefulData.setY(y);
-            usefulData.setEulideanDistance(result);
-            dataSet.add(usefulData);
-            cursor.close();
+        for(Coordinate a:NearPoint) {
+            x = a.getX();
+            y = a.getY();
+            //Log.i(TAG_5, "getEulideanDistance: x="+x+"y="+y);
+            String str1 = String.valueOf((int) x);
+            String str2 = String.valueOf((int) y);
+            SQLiteDatabase db = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READONLY);
+                cursor = db.rawQuery("select * from " + querryName + " where x=? and y=?", new String[]{str1, str2});
+                if (cursor.moveToFirst()) {
+                    _ADD7 = cursor.getDouble(cursor.getColumnIndex("_ADD7"));
+                    _A7F3 = cursor.getDouble(cursor.getColumnIndex("_A7F3"));
+                    _AD9F = cursor.getDouble(cursor.getColumnIndex("_AD9F"));
+                    _7D19 = cursor.getDouble(cursor.getColumnIndex("_7D19"));
+                    //Log.i(TAG_5, "getEulideanDistance: "+_ADD7+"//"+_A7F3+"//"+_AD9F+"//"+_7D19);
+                    result = Math.pow((_ADD7 - RSSI_ADD7), 2) + Math.pow((_A7F3 - RSSI_A7F3), 2) + Math.pow((_AD9F - RSSI_AD9F), 2)
+                            + Math.pow((_7D19 - RSSI_7D19), 2);
+                    result = Math.sqrt(result);
+                    usefulData=new Coordinate();
+                    usefulData.setX(x);
+                    usefulData.setY(y);
+                    usefulData.setEulideanDistance(result);
+                    dataSet.add(usefulData);
+                }
+                cursor.close();
+                db.close();
         }
         return dataSet;
     }
@@ -123,15 +130,18 @@ public class KNN {
             }
             for (int i=0;i<=K-1;i++) {
                 pointSet[i]=dataSet_1[i];
-                Log.d(TAG_5, "getKPoint:首次定位 " + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
+                //Log.d(TAG_5, "getKPoint:首次定位 " + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
             }
         }
         else if(dataSet_1==null&&dataSet_2!=null){//非首次定位
             int len=dataSet_2.size();
+            Log.i(TAG_5, "getKPoint: len="+len);
             Coordinate[] dataSet_2_buffer=new Coordinate[len];
             int x=0;
             for(Coordinate a:dataSet_2){
+                dataSet_2_buffer[x]=new Coordinate();
                 dataSet_2_buffer[x++]=a;
+                //Log.i(TAG_5, "getKPoint: "+a.getX()+a.getY());
             }
             Coordinate buffer;
             for(int i=0;i<len-1;i++){
@@ -147,14 +157,14 @@ public class KNN {
             if(len>=K) {
                 for (int i = 0; i <= K - 1; i++) {
                     pointSet[i] = dataSet_2_buffer[i];
-                    Log.d(TAG_5, "getKPoint:非首次定位 " + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
+                    //Log.d(TAG_5, "getKPoint:非首次定位 个数大于K" + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
                 }
             }
             else
             {
                 for (int i = 0; i <= len - 1; i++) {
                     pointSet[i] = dataSet_2_buffer[i];
-                    Log.d(TAG_5, "getKPoint:非首次定位 " + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
+                    //Log.d(TAG_5, "getKPoint:非首次定位 个数小于K" + pointSet[i].getX() + "_" + pointSet[i].getY() + "///" + pointSet[i].getEulideanDistance());
                 }
             }
         }
@@ -196,7 +206,7 @@ public class KNN {
      * @return
      */
     private ArrayList<Coordinate> getNearPoint(ArrayList<Coordinate> pointLocationSet, int H){
-        ArrayList<Coordinate> NearPoint = null;
+        ArrayList<Coordinate> NearPoint = new ArrayList<>();
         Coordinate[] coordinateData=getCoordinateData();
         int len=pointLocationSet.size();
         double x,y;
@@ -211,8 +221,10 @@ public class KNN {
             distance=Math.sqrt(Math.pow(x-old_x,2)+Math.pow(y-old_y,2));
             if(distance<=H){
                 NearPoint.add(a);
+                Log.i(TAG_5, "getNearPoint: x="+x+"y="+y);
             }
         }
+        Log.i(TAG_5, "getNearPoint: end");
         return NearPoint;
     }
 
@@ -225,7 +237,6 @@ public class KNN {
         for(int i=1;i<=6;i++){
             for(int j=1;j<=5;j++){
                 CoordinateData[(i-1)*5+j-1]=new Coordinate();//数组中每一个元素都需要实例
-                Log.d(TAG_5, "getCoordinateData: "+CoordinateData.length);
                 CoordinateData[(i-1)*5+j-1].setX(i);
                 CoordinateData[(i-1)*5+j-1].setY(j);
             }
@@ -245,7 +256,11 @@ public class KNN {
      */
     public Coordinate KNN(double RSSI_ADD7, double RSSI_A7F3, double RSSI_AD9F, double RSSI_7D19,int K,int H){
         Coordinate LocationPoint;
+        Log.i(TAG_5, "KNN: "+RSSI_ADD7+"//"+RSSI_A7F3+"//"+RSSI_AD9F+"//"+RSSI_7D19);
         Log.d(TAG_5, "KNN: LocationDataSet长度为"+LocationPointSet.size());
+        if(LocationPointSet.size()>500){
+            LocationPointSet=new ArrayList<>();
+        }
         if(LocationPointSet.size()==0){
             Coordinate[] distanceDataSet;
             Coordinate[] KPoint;
@@ -253,19 +268,19 @@ public class KNN {
             KPoint=getKPoint(distanceDataSet,null,K);//获取K个欧式距离最小的数据集
             LocationPoint=getLocation(KPoint);//实现定位
             LocationPointSet.add(LocationPoint);//定位数据加入数据集
-            Log.d(TAG_5, "KNN: 首次定位distanceDataSet长度为"+distanceDataSet.length+"//KPoint长度为"+KPoint.length);
+            //Log.d(TAG_5, "KNN: 首次定位distanceDataSet长度为"+distanceDataSet.length+"//KPoint长度为"+KPoint.length);
         }
         else
         {
             ArrayList<Coordinate> NearPoint;
-            ArrayList<Coordinate> distanceDataSet;
+            ArrayList<Coordinate> usefulDataSet;
             Coordinate[] KPoint;
             NearPoint=getNearPoint(LocationPointSet,H);//获取历史定位点在半径为H范围以内的所有点
-            distanceDataSet=getEulideanDistance(RSSI_ADD7,RSSI_A7F3,RSSI_AD9F,RSSI_7D19,NearPoint);//获取在NearPoint中的欧式距离
-            KPoint=getKPoint(null,distanceDataSet,K);//获取K个最近的指纹点 （可能少于K）
+            usefulDataSet=getEulideanDistance(RSSI_ADD7,RSSI_A7F3,RSSI_AD9F,RSSI_7D19,NearPoint);//获取在NearPoint中的欧式距离
+            KPoint=getKPoint(null,usefulDataSet,K);//获取K个最近的指纹点 （可能少于K）
             LocationPoint=getLocation(KPoint);//实现定位
             LocationPointSet.add(LocationPoint);//定位数据加入数据集
-            Log.d(TAG_5, "KNN: 非首次定位distanceDataSet长度为"+distanceDataSet.size()+"//KPoint长度为"+KPoint.length);
+            //Log.d(TAG_5, "KNN: 非首次定位distanceDataSet长度为"+usefulDataSet.size()+"//KPoint长度为"+KPoint.length);
          }
         return LocationPoint;
     }

@@ -27,7 +27,7 @@ import com.example.beacontest.Function.GetOrientation;
 import com.example.beacontest.Function.RotateBitmap;
 import com.example.beacontest.R;
 
-import static com.example.beacontest.constant.TAG.TAG_3;
+import static com.example.beacontest.Constant.TAG.TAG_3;
 
 
 public class MainRotateTest extends AppCompatActivity {
@@ -57,7 +57,6 @@ public class MainRotateTest extends AppCompatActivity {
     float[] values=new float[3];
     float[] RValues=new float[9];
     private static int i = 0;
-    private int angle = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

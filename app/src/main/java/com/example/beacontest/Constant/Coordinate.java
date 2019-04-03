@@ -1,4 +1,4 @@
-package com.example.beacontest.constant;
+package com.example.beacontest.Constant;
 
 /**
  * 封装一个坐标类
