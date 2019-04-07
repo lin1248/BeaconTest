@@ -18,8 +18,9 @@ import static com.example.beacontest.Constant.TAG.querryName;
  */
 public class KNN {
 
-    private ArrayList<Coordinate> LocationPointSet=new ArrayList<>();
-    private Cursor cursor=null;
+    private ArrayList<Coordinate> LocationPointSet=new ArrayList<>();//定位点集合
+    private Cursor cursor=null;//数据库索引
+
     /**
      * 获取定位点到各个指纹点的欧式距离的数据集(首次定位时使用)
      * @param RSSI_ADD7
@@ -29,7 +30,7 @@ public class KNN {
      * @return
      */
     private Coordinate[] getEulideanDistance(double RSSI_ADD7, double RSSI_A7F3, double RSSI_AD9F, double RSSI_7D19){
-        Coordinate[] dataSet=new Coordinate[30];
+        Coordinate[] dataSet=new Coordinate[30];//欧式距离集合
         double result;
         double _ADD7,_A7F3,_AD9F,_7D19;
         int x,y;
@@ -233,7 +234,7 @@ public class KNN {
      * @return
      */
      private Coordinate[] getCoordinateData(){
-        Coordinate[] CoordinateData=new Coordinate[30];
+         Coordinate[] CoordinateData=new Coordinate[30];//座标点集合
         for(int i=1;i<=6;i++){
             for(int j=1;j<=5;j++){
                 CoordinateData[(i-1)*5+j-1]=new Coordinate();//数组中每一个元素都需要实例
@@ -282,6 +283,7 @@ public class KNN {
             LocationPointSet.add(LocationPoint);//定位数据加入数据集
             //Log.d(TAG_5, "KNN: 非首次定位distanceDataSet长度为"+usefulDataSet.size()+"//KPoint长度为"+KPoint.length);
          }
+
         return LocationPoint;
     }
 

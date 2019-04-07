@@ -2,4 +2,8 @@
     <string name="app_name">BeaconTest</string>
     <string name="search">搜索蓝牙</string>
     <string name="rotate">开始旋转</string>
+    <string name="drawLine">显示网格线</string>
+    <string name="cancelLine">消除网格线</string>
+    <string name="startLocation">开始定位</string>
+    <string name="stopLocation">停止定位</string>
 </resources>

@@ -4,24 +4,58 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/final_layout">
-    <RadioGroup
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:id="@+id/radioGroup"
-        >
-        <RadioButton
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radio"
-            tools:ignore="MissingConstraints" />
-        <RadioButton
+            android:orientation="horizontal">
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioCancel"
-            tools:ignore="MissingConstraints" />
-    </RadioGroup>
+            tools:ignore="MissingConstraints"
+            android:id="@+id/radioGroup"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio"
+                tools:ignore="MissingConstraints"
+                android:text="@string/drawLine"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioCancel"
+                tools:ignore="MissingConstraints"
+                android:text="@string/cancelLine"/>
+            </RadioGroup>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_start"
+                android:text="@string/startLocation"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_stop"
+                android:text="@string/stopLocation"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_ori"/>
+        </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/image"/>
+    </LinearLayout>
     <com.example.beacontest.View.DrawView
         android:layout_centerInParent="true"
         android:layout_width="match_parent"

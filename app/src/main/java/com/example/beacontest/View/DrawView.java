@@ -6,12 +6,17 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.example.beacontest.R;
+
+import static com.example.beacontest.Constant.TAG.TAG_6;
 
 public class DrawView extends View {
     private boolean drawType=false;
@@ -21,6 +26,7 @@ public class DrawView extends View {
     private float x;//x轴坐标
     private float y;//y轴坐标
     private int radius=10;//半径长度
+    Paint paint;
 
     public void setDrawType2(boolean type){
         this.drawType2=type;
@@ -49,17 +55,23 @@ public class DrawView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.d(TAG_6, "onDraw: 刷新UI");
+        setLayerType(LAYER_TYPE_HARDWARE,null);//关闭硬件加速
+        canvas.drawColor(0,PorterDuff.Mode.CLEAR);//清空画布
         //设置画笔
-        Paint paint=new Paint();
+        paint=new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
-
-        Bitmap bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.outline);
-//        canvas.drawBitmap(bitmap,100,610,paint);//不限定图片大小  只指定左上角坐标
-        RectF rectF=new RectF(0,200,1080,1600);
-        canvas.drawBitmap(bitmap,null,rectF,paint);//限定图片显示范围
-
+        canvas.drawLine(0,200,1080,200,paint);
+        canvas.drawLine(0,1600,1080,1600,paint);
+        canvas.drawLine(0,200,0,1600,paint);
+        canvas.drawLine(1080,200,1080,1600,paint);
+        //canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        /*bitmap= BitmapFactory.decodeResource(getResources(), R.drawable.outline);
+        canvas.drawBitmap(bitmap,100,610,paint);//不限定图片大小  只指定左上角坐标
+        rectF=new RectF(0,200,1080,1600);
+        canvas.drawBitmap(bitmap,null,rectF,paint);//限定图片显示范围*/
         if(drawType){
             paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(cy*y,cx*x+200,radius,paint);

@@ -431,6 +431,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -690,6 +691,8 @@ id beginning
 id blocking
 id bottom
 id btn
+id btn_start
+id btn_stop
 id buttonPanel
 id center
 id center_horizontal
@@ -732,6 +735,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_ori
 id info
 id invisible
 id italic
@@ -904,10 +908,14 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string cancelLine
+string drawLine
 string rotate
 string search
 string search_menu_title
+string startLocation
 string status_bar_notification_info_overflow
+string stopLocation
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

@@ -6,7 +6,9 @@ public class TAG {
     public static final String TAG_3 = "RotateTest";
     public static final String TAG_4 = "CopyDB";
     public static final String TAG_5 = "KNN";
+    public static final String TAG_6 = "View";
     public static final String TAG_test = "test";
+    public static final String TAG_request = "request";
 
     public static String North = "北";
     public static String South = "南";
@@ -21,5 +23,10 @@ public class TAG {
     public static String dbPath="data/data/com.example.beacontest/files/fingerprint.db";
     public static String querryName="fingerprint";
 
+    public static String buttonColor="#CAFF70";
 
+    public static String url = "http://106.15.189.247:8080/IndoorLocationServer/MyServlet";
+
+    public static int K=5;
+    public static int H=3;
 }
