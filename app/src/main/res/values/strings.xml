@@ -1,9 +1,23 @@
 <resources>
-    <string name="app_name">BeaconTest</string>
+    <string name="app_name">室内定位</string>
     <string name="search">搜索蓝牙</string>
     <string name="rotate">开始旋转</string>
     <string name="drawLine">显示网格线</string>
     <string name="cancelLine">消除网格线</string>
     <string name="startLocation">开始定位</string>
     <string name="stopLocation">停止定位</string>
+    <string name="K">K:</string>
+    <string name="H">H:</string>
+    <string name="calcInServer">服务器计算</string>
+    <string name="calcInLocal">本地计算</string>
+    <string name="KNNChoice">性能</string>
+    <string name="paramsSet">参数设置</string>
+    <string name="back">返回</string>
+    <string name="modification">修改</string>
+    <string name="setting">设置</string>
+    <string name="x">X:</string>
+    <string name="y">Y:</string>
+    <string name="save">保存</string>
+    <string name="net">联网</string>
+    <string name="local">本地</string>
 </resources>

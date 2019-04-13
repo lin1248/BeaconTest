@@ -2,13 +2,13 @@ package com.example.beacontest.Main;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,12 +20,11 @@ import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -56,53 +55,97 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import io.reactivex.functions.Consumer;
 
-import static android.view.View.LAYER_TYPE_HARDWARE;
 import static com.example.beacontest.Constant.Address.mAdress_7D19;
 import static com.example.beacontest.Constant.Address.mAdress_A7F3;
 import static com.example.beacontest.Constant.Address.mAdress_AD9F;
 import static com.example.beacontest.Constant.Address.mAdress_ADD7;
-import static com.example.beacontest.Constant.TAG.H;
-import static com.example.beacontest.Constant.TAG.K;
 import static com.example.beacontest.Constant.TAG.TAG_1;
-import static com.example.beacontest.Constant.TAG.TAG_2;
 import static com.example.beacontest.Constant.TAG.TAG_3;
-import static com.example.beacontest.Constant.TAG.TAG_request;
-import static com.example.beacontest.Constant.TAG.buttonColor;
 import static com.example.beacontest.Constant.TAG.dbName;
 import static com.example.beacontest.Constant.TAG.url;
 
 
 public class Main extends AppCompatActivity {
-    private static boolean locationEnable=false;
-    private static int times=0;
-    private Message msg_rotate;
+    private static float x = -1;
+    private static float y = -1;
+    private static int K = 5;
+    private static int H = 3;
+    private static int netServerSwitch = 1;
+    private static boolean locationEnable = false;
+    private static int times = 0;
+    private static int t=50;
+    private static int num = 0;
+    private static int netTimes=0;
+    private static Coordinate[] LocationSet=new Coordinate[t];
+
+    private Message msg_timer,msg_showXY;
     private BluetoothAdapter mBluetoothAdapter;
-    private GetOrientation getOrientation =new GetOrientation();
+    private GetOrientation getOrientation = new GetOrientation();
     private static final int request_enabled = 1;//定义一个int resultCode
-    MyHanlder myHanlder = new MyHanlder();
-    private SensorManager sm=null;
-    float[] accelerometerValues=new float[3];
-    float[] magneticFieldValues=new float[3];
-    float[] values=new float[3];
-    float[] RValues=new float[9];
-    PowerManager.WakeLock mWakeLock;
-    double _ADD7,_A7F3,_AD9F,_7D19;
-    KNN knn=new KNN();
-    Coordinate LocationPoint;
-    ConstraintLayout layout;
-    RadioButton radio_btn,radio_btn2;
-    RadioGroup radioGroup;
-    Button btn_start,btn_stop;
-    int num=0;
-    ImageView imageView,imageView_ori;
-    ViewGroup.LayoutParams params;
-    DrawView view;
-    RotateBitmap rotateBitmap = new RotateBitmap();
+    private MyHanlder myHanlder = new MyHanlder();
+    private SensorManager sm = null;
+
+    private float[] accelerometerValues = new float[3];
+    private float[] magneticFieldValues = new float[3];
+    private float[] values = new float[3];
+    private float[] RValues = new float[9];
+
+    private PowerManager.WakeLock mWakeLock;
+    private double _ADD7, _A7F3, _AD9F, _7D19;
+    private KNN knn = new KNN();
+    private DrawView view;
+    private RotateBitmap rotateBitmap = new RotateBitmap();
     private Bitmap originBM = null;
     private Bitmap rotateBM = null;
+    private Timer timer;
+    private TimerTask task;
+
+    private MenuItem mMenuItem;
+    private ImageView imageView_ori;
+    private TextView tv_x,tv_y,tv_K,tv_H;
+    private TextView tv_statue;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.setting, menu);
+        mMenuItem = menu.findItem(R.id.action_start);//获取item实例
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_setting://监听菜单按钮
+                Intent intent = new Intent(Main.this, SettingActivity.class);
+                intent.putExtra("K", K + "");
+                intent.putExtra("H", H + "");
+                intent.putExtra("netServerSwitch", netServerSwitch + "");
+                startActivityForResult(intent, 0);
+                break;
+            case R.id.action_start:
+                if (locationEnable) {
+                    stopTimer();
+                    String start = "开始定位";
+                    mMenuItem.setTitle(start);
+                    locationEnable = false;
+                    initUI(0, 0, false);
+                } else {
+                    String stop = "停止定位";
+                    mMenuItem.setTitle(stop);
+                    startTimer();
+                    Log.i(TAG_1, "onClick: timer start!");
+                    locationEnable = true;
+                }
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * 提取蓝牙广播包数据
@@ -110,76 +153,177 @@ public class Main extends AppCompatActivity {
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
         @Override
         public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+
             /*
               发现A7F3
               */
-                if (device.getAddress().equals(mAdress_A7F3)) {
-                    Log.i(TAG_1, "onLeScan: A7F3:getRSSI" + rssi);
-                    _A7F3 = rssi;
-                }
+            if (device.getAddress().equals(mAdress_A7F3)) {
+                Log.i(TAG_1, "onLeScan: A7F3:getRSSI" + rssi);
+                _A7F3 = rssi;
+            }
 
             /*
              发现ADD7
               */
-                else if (device.getAddress().equals(mAdress_ADD7)) {
-                    Log.i(TAG_1, "onLeScan: ADD7:getRSSI" + rssi);
-                    _ADD7 = rssi;
-                }
+            else if (device.getAddress().equals(mAdress_ADD7)) {
+                Log.i(TAG_1, "onLeScan: ADD7:getRSSI" + rssi);
+                _ADD7 = rssi;
+            }
 
             /*
              发现AD9F
               */
-                else if (device.getAddress().equals(mAdress_AD9F)) {
-                    Log.i(TAG_1, "onLeScan: AD9F:getRSSI" + rssi);
-                    _AD9F = rssi;
-                }
+            else if (device.getAddress().equals(mAdress_AD9F)) {
+                Log.i(TAG_1, "onLeScan: AD9F:getRSSI" + rssi);
+                _AD9F = rssi;
+            }
 
             /*
              发现7D19
               */
-                else if (device.getAddress().equals(mAdress_7D19)) {
-                    Log.i(TAG_1, "onLeScan: 7D19:getRSSI" + rssi);
-                    _7D19 = rssi;
-                }
+            else if (device.getAddress().equals(mAdress_7D19)) {
+                Log.i(TAG_1, "onLeScan: 7D19:getRSSI" + rssi);
+                _7D19 = rssi;
+            }
 
-                if(_ADD7!=0&&_A7F3!=0&&_AD9F!=0&&_7D19!=0&&num==50&&locationEnable) {
-                    num=0;
-                    //LocationPoint = knn.KNN(_ADD7, _A7F3, _AD9F, _7D19, 5, 3);
-                    //initUI((float) LocationPoint.getX(), (float) LocationPoint.getY(), true);
-                    KnnRequest(_ADD7, _A7F3, _AD9F, _7D19, K, H);
+            if (_ADD7 != 0 && _A7F3 != 0 && _AD9F != 0 && _7D19 != 0  && locationEnable) {
+
+                if (timer != null) {
+                    Main.this.timer.cancel();
                 }
-                else if(locationEnable){
-                    num++;
+                stopTimer();
+                startTimer();
+                if (netServerSwitch == 1) {//服务器计算
+                    if(netTimes>=20){
+                        KnnRequest(_ADD7, _A7F3, _AD9F, _7D19, K, H);
+                        netTimes=0;
+                    }
+
+                    else
+                        netTimes++;
+                } else if (netServerSwitch == 0) {//本地计算
+                    Coordinate locationPoint = knn.KNN(_ADD7, _A7F3, _AD9F, _7D19, K, H);
+                    Log.i(TAG_1, "onResponse: 本地返回值+"+num);
+                    LocationSet[num]=new Coordinate();
+                    LocationSet[num++]=locationPoint;
                 }
             }
+            if(num>=t){
+                Coordinate locationPoint = KNN.getAverageLocation(t,LocationSet);
+                LocationSet=new Coordinate[t];
+                num=0;
+
+                x = (float) Math.round(locationPoint.getX()*100)/100;
+                y = (float) Math.round(locationPoint.getY()*100)/100;
+
+                msg_showXY=Message.obtain();
+                msg_showXY.what=3;
+                myHanlder.sendMessage(msg_showXY);
+
+                initUI((float) locationPoint.getX(), (float) locationPoint.getY(), true);
+            }
+        }
 
     };
 
+    /**
+     * 关闭计时器
+     */
+    private void stopTimer(){
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+        if (task != null) {
+            task.cancel();
+            task = null;
+        }
+    }
+
+    /**
+     * 开启计时器
+     */
+    private void startTimer(){
+        if (timer == null) {
+            timer = new Timer();
+        }
+
+        if (task == null) {
+            task = new TimerTask() {
+                @Override
+                public void run() {
+                    msg_timer=Message.obtain();
+                    msg_timer.what=1;
+                    mHandler.sendMessage(msg_timer);
+                    Log.i(TAG_1, "run: timer done!");
+                }
+            };
+        }
+        if(timer != null && task != null )
+            timer.schedule(task,10000);
+    }
+
+    /**
+     * 处理其他线程发送的消息
+     */
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @SuppressLint("ShowToast")
+        public void handleMessage (Message msg) {//此方法在ui线程运行
+            switch(msg.what) {
+                case 1:
+                    Toast.makeText(Main.this,"搜索Beacon超时",Toast.LENGTH_LONG).show();
+                    Log.i(TAG_1, "handleMessage: timer done!");
+                    break;
+            }
+        }
+    };
+
+    @SuppressLint("CheckResult")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.final_layout);
-        RxPermissions rxPermissions=new RxPermissions(this);
-        copyDB(dbName);
+
+        copyDB(dbName);//复制数据库
+        //获取蓝牙设配器
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        //获取方向传感器
         sm=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
         Sensor aSensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         Sensor mSensor = sm.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        //注册监听
         sm.registerListener(myListener, aSensor, SensorManager.SENSOR_DELAY_GAME);
         sm.registerListener(myListener, mSensor, SensorManager.SENSOR_DELAY_GAME);
-        imageView=findViewById(R.id.image);
+
+        tv_x=findViewById(R.id.tv_x);
+        tv_y=findViewById(R.id.tv_y);
+        tv_K=findViewById(R.id.tv_K);
+        tv_H=findViewById(R.id.tv_H);
+        ImageView image_statue = findViewById(R.id.image_status);
+        image_statue.setImageResource(R.drawable.greenpoint);
+        ViewGroup.LayoutParams params = image_statue.getLayoutParams();
+        params.height=60;
+        params.width=60;
+        image_statue.setLayoutParams(params);
+
+        tv_statue=findViewById(R.id.tv_statue);
+        ImageView imageView = findViewById(R.id.image);
         imageView.setImageResource(R.drawable.outline);
-        params=imageView.getLayoutParams();
+        params =imageView.getLayoutParams();
         params.height=1400;
         params.width=1080;
         imageView.setLayoutParams(params);
+
         imageView_ori=findViewById(R.id.image_ori);
         imageView_ori.setImageResource(R.drawable.pika);
-        params=imageView_ori.getLayoutParams();
+        params =imageView_ori.getLayoutParams();
         params.height=200;
         params.width=200;
         imageView_ori.setLayoutParams(params);
+
         //获取权限
+        RxPermissions rxPermissions=new RxPermissions(this);
         rxPermissions.request(Manifest.permission.BLUETOOTH_ADMIN,
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.ACCESS_FINE_LOCATION,
@@ -197,44 +341,14 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        radio_btn=findViewById(R.id.radio);
-        radio_btn2=findViewById(R.id.radioCancel);
-        radioGroup=findViewById(R.id.radioGroup);
-        layout =findViewById(R.id.final_layout);
-        btn_start=findViewById(R.id.btn_start);
-        btn_stop=findViewById(R.id.btn_stop);
-
-        btn_stop.setBackgroundColor(0);
-        btn_start.setBackgroundColor(Color.parseColor(buttonColor));
+        RadioButton radio_btn2 = findViewById(R.id.radioCancel);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        ConstraintLayout layout = findViewById(R.id.final_layout);
         radio_btn2.setChecked(true);
 
         view = new DrawView(this);
         layout.addView(view);
         view.setDrawType(false);//初始化DrawType
-
-        btn_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn_stop.setClickable(true);
-                btn_start.setClickable(false);
-                btn_start.setBackgroundColor(0);
-                btn_stop.setBackgroundColor(Color.parseColor(buttonColor));
-                locationEnable=true;
-            }
-        });
-
-        btn_stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn_stop.setClickable(false);
-                btn_start.setClickable(true);
-                btn_stop.setBackgroundColor(0);
-                btn_start.setBackgroundColor(Color.parseColor(buttonColor));
-                locationEnable=false;
-                initUI(0,0,false);
-            }
-        });
-
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -252,8 +366,12 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        Message msg_init = Message.obtain();
+        msg_init.what=2;
+        myHanlder.sendMessage(msg_init);
+
         initUI(0,0,false);//初始化UI
-        initWakeLock();
+        //initWakeLock();
         //初始化唤醒锁
         init_bluetooth();
         //初始化蓝牙要放在蓝牙适配器获取了默认适配器之后
@@ -311,7 +429,7 @@ public class Main extends AppCompatActivity {
 
 
     /**
-     * 用于发送Msg
+     * 用于发送Msg旋转箭头
      * @param alpha
      */
     private void sendMsg(float alpha){
@@ -332,7 +450,7 @@ public class Main extends AppCompatActivity {
         if(alpha<0)
             alpha=alpha+360;
         String str=getOrientation.getStr((int)alpha);
-        msg_rotate = Message.obtain();
+        Message msg_rotate = Message.obtain();
         msg_rotate.what = 1;
         msg_rotate.obj = str+(int) alpha;
         myHanlder.sendMessage(msg_rotate);
@@ -357,7 +475,9 @@ public class Main extends AppCompatActivity {
     }
 
     /**
-     * 获取蓝牙权限的响应
+     * 广播的回调函数
+     * 获取蓝牙打开的状态
+     * 更新界面信息
      * @param requestCode
      * @param resultCode
      * @param data
@@ -377,6 +497,28 @@ public class Main extends AppCompatActivity {
                 Log.i(TAG_1, "打开蓝牙异常！");
             }
         }
+        if(requestCode == 0){
+            if (resultCode == Activity.RESULT_OK) {
+                K= Integer.valueOf(data.getStringExtra("K"));
+                H= Integer.valueOf(data.getStringExtra("H"));
+                Message msg_showKH=Message.obtain();
+                msg_showKH.what=2;
+                myHanlder.sendMessage(msg_showKH);
+                netServerSwitch=Integer.valueOf(data.getStringExtra("netServerSwitch"));
+                if(netServerSwitch==1){
+                    Message msg_showStatus=Message.obtain();
+                    msg_showStatus.what=4;
+                    myHanlder.sendMessage(msg_showStatus);
+                    Log.i(TAG_1, "onActivityResult: 4 "+netServerSwitch);
+                }else{
+                    Message msg_showStatus=Message.obtain();
+                    msg_showStatus.what=6;
+                    myHanlder.sendMessage(msg_showStatus);
+                    Log.i(TAG_1, "onActivityResult: 6 " +netServerSwitch);
+                }
+                Log.d(TAG_1, "onActivityReenter: "+K+H+netServerSwitch);
+            }
+        }
     }
 
     /**
@@ -391,15 +533,26 @@ public class Main extends AppCompatActivity {
 
             switch (msg.what) {
                 case 1:
-
                     Log.i(TAG_3, "handleMessage: 发生旋转");
                     imageView_ori.setImageBitmap(rotateBM);
-
+                    break;
+                case 2:
+                    tv_K.setText("   "+K);
+                    tv_H.setText("   "+H);
+                    break;
+                case 3:
+                    tv_x.setText(" "+x);
+                    tv_y.setText(" "+y);
+                    break;
+                case 4:
+                    tv_statue.setText("联网");
                     break;
                 case 5:
-
                     //tv5.setText("方向："+msg.obj);
                     Log.i(TAG_1, "Orientation is"+msg.obj);
+                    break;
+                case 6:
+                    tv_statue.setText("本地");
                     break;
 
             }
@@ -473,8 +626,8 @@ public class Main extends AppCompatActivity {
         //请求地址
         String Url=url;
         String tag = "KnnRequest";    //注②
-        final double[] x = new double[1];
-        final double[] y = new double[1];
+        final double[] _x = new double[1];
+        final double[] _y = new double[1];
 
         //取得请求队列
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -490,10 +643,19 @@ public class Main extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = (JSONObject) new JSONObject(response).get("params");
                             String result = jsonObject.getString("X");
-                            x[0] =Double.valueOf(result);
+                            _x[0] =Double.valueOf(result);
                             result=jsonObject.getString("Y");
-                            y[0]=Double.valueOf(result);
-                            initUI((float) x[0], (float) y[0], true);
+                            _y[0]=Double.valueOf(result);
+
+                            Log.i(TAG_1, "onResponse: 网络返回值+"+num);
+                            x = (float) Math.round(_x[0]*100)/100;
+                            y = (float) Math.round(_y[0]*100)/100;
+
+                            msg_showXY=Message.obtain();
+                            msg_showXY.what=3;
+                            myHanlder.sendMessage(msg_showXY);
+
+                            initUI((float) _x[0], (float) _y[0], true);
                         } catch (JSONException e) {
                             //做自己的请求异常操作，如Toast提示（“无网络连接”等）
                             Log.e(TAG_1, e.getMessage(), e);
@@ -519,11 +681,11 @@ public class Main extends AppCompatActivity {
                 return params;
             }
         };
-
         //设置Tag标签
         request.setTag(tag);
-
         //将请求添加到队列中
         requestQueue.add(request);
     }
+
+
 }

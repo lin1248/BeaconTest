@@ -27,6 +27,4 @@ public class TAG {
 
     public static String url = "http://106.15.189.247:8080/IndoorLocationServer/MyServlet";
 
-    public static int K=5;
-    public static int H=3;
 }

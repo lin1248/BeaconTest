@@ -287,5 +287,30 @@ public class KNN {
         return LocationPoint;
     }
 
+    /**
+     * 获取t次定位点集合的平均值
+     * @param t
+     * @param LocationSet
+     * @return
+     */
+    public static Coordinate getAverageLocation(int t,Coordinate[] LocationSet){
+        if(t>0&&LocationSet.length==t) {
+            Coordinate LocationPoint = new Coordinate();
+            LocationPoint.setX(0);
+            LocationPoint.setY(0);
+            for (int i = 0; i < t; i++) {
+                LocationPoint.setY(LocationPoint.getY() + LocationSet[i].getY());
+                LocationPoint.setX(LocationPoint.getX() + LocationSet[i].getX());
+            }
+            LocationPoint.setY(LocationPoint.getY() / t);
+            LocationPoint.setX(LocationPoint.getX() / t);
+            return LocationPoint;
+        }
+        else {
+            Log.e(TAG_5, "getAverageLocation: 参数不正确");
+            return null;
+        }
+    }
+
 }
 
