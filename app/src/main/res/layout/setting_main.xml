@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/setting_background">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/setting_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:background="@color/blue">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_back"
+            android:drawableLeft="@drawable/ic_keyboard_backspace_white_24dp"
+            android:background="@drawable/btn_bg_normal3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/setting"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            />
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +41,8 @@
             android:layout_height="wrap_content"
             android:text="@string/K"
             android:textSize="30sp"
-            android:layout_marginLeft="50sp"/>
+            android:layout_marginLeft="50sp"
+            android:textColor="#000000"/>
         <EditText
             android:layout_width="30sp"
             android:layout_height="wrap_content"
@@ -27,7 +51,8 @@
             android:inputType="number"
             android:background="@drawable/bg_edittext"
             android:textColorHint="#AAAAAA"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="#000000"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +62,8 @@
             android:layout_height="wrap_content"
             android:text="@string/H"
             android:textSize="30sp"
-            android:layout_marginLeft="50sp" />
+            android:layout_marginLeft="50sp"
+            android:textColor="#000000"/>
         <EditText
             android:layout_width="30sp"
             android:layout_height="wrap_content"
@@ -47,8 +73,59 @@
             android:background="@drawable/bg_edittext"
             android:textColorHint="#AAAAAA"
             android:singleLine="true"
+            android:textColor="#000000"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/t"
+            android:textSize="30sp"
+            android:layout_marginLeft="50sp"
+            android:textColor="#000000"/>
+        <EditText
+            android:layout_width="30sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40sp"
+            android:id="@+id/edit_t"
+            android:inputType="number"
+            android:background="@drawable/bg_edittext"
+            android:textColorHint="#AAAAAA"
+            android:singleLine="true"
+            android:textColor="#000000"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/path"
+        android:layout_marginLeft="50sp"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGround3">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:text="@string/show"
+            android:textColor="#000000"
+            android:id="@+id/radio_show"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:text="@string/noShow"
+            android:textColor="#000000"
+            android:id="@+id/radio_noShow"
+            />
+    </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,6 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50sp"
             android:text="@string/calcInLocal"
+            android:textColor="#000000"
             android:id="@+id/radio_local"
             />
         <RadioButton
@@ -72,6 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50sp"
             android:text="@string/calcInServer"
+            android:textColor="#000000"
             android:id="@+id/radio_net"
             />
     </RadioGroup>
@@ -82,5 +161,6 @@
         android:layout_marginTop="50sp"
         android:layout_gravity="center_horizontal"
         android:text="@string/save"
-        android:id="@+id/btn_save"/>
+        android:id="@+id/btn_save"
+        android:background="@drawable/btn_bg_normal"/>
 </LinearLayout>
