@@ -20,4 +20,8 @@
     <string name="save">保存</string>
     <string name="net">联网</string>
     <string name="local">本地</string>
+    <string name="t">t:  </string>
+    <string name="path">路径</string>
+    <string name="show">显示</string>
+    <string name="noShow">不显示</string>
 </resources>

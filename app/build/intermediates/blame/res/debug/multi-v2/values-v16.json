@@ -4,7 +4,7 @@
             "outputFile": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1627070facb5754f1eb61f3b8714a90e\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-2\\files-2.1\\e44b6ab2fe6a66738046e757804685a6\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\19eda946c72d87a452e85a525e7c70d1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-2\\files-2.1\\29df715384b20cbb724623992280c5e5\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

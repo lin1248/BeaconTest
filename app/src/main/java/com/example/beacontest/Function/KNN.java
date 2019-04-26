@@ -294,7 +294,7 @@ public class KNN {
      * @return
      */
     public static Coordinate getAverageLocation(int t,Coordinate[] LocationSet){
-        if(t>0&&LocationSet.length==t) {
+        if(t>0&&LocationSet.length>=t) {
             Coordinate LocationPoint = new Coordinate();
             LocationPoint.setX(0);
             LocationPoint.setY(0);
