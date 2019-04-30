@@ -2,6 +2,7 @@ package com.example.beacontest.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,9 +25,27 @@ public class StartActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN ,
                 WindowManager.LayoutParams. FLAG_FULLSCREEN);
         setContentView(R.layout.start_main);
+
         final ImageView imageView=findViewById(R.id.image_start);
         imageView.setImageResource(R.drawable.start);
-        AlphaAnimation animation=new AlphaAnimation(1,1);
+        /**
+         * 跳转一
+         * 使用延时执行
+         */
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent=new Intent(StartActivity.this,Main.class);
+                startActivity(intent);
+                StartActivity.this.finish();
+            }
+        },3000);
+
+        /**
+         * 跳转二
+         * 使用透明度变化
+         */
+        /*AlphaAnimation animation=new AlphaAnimation(1,1);
         animation.setDuration(3000);
         imageView.startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
@@ -47,6 +66,6 @@ public class StartActivity extends AppCompatActivity {
             public void onAnimationRepeat(Animation animation) {
 
             }
-        });
+        });*/
     }
 }

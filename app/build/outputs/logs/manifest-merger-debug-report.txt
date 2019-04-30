@@ -1,209 +1,209 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\29df715384b20cbb724623992280c5e5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18752230ed437cd9f796e9004d98fa71\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6aa942bfbacf16d2400b87bd51299930\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8cb88874ff0da65fbbf862fc88b37d83\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1086a567b0af056c45c0d03a068beaf\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7d6b79e44dd3f8a12bc0a453e68e71b5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e6e052bdf2f37f94062857abde81b287\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1add56fdf3422d00f4f41015e311698\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c134c620327c7b7afc040d8ede7a4acf\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ed9a1f1916300a47fa3365479252df55\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c44367ec1fb83e8b378369e65cd95f5c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\36a5e1fa4a81d28c81b185616e7a1ea6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\232d95f53b3a69bc0616fb3bf0bba973\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fdea7be73904ce0f146d10d629de73b2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6bb012c42ab1088317ad2f3e73fc7def\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\b348b31239abf05d806fcf9d1f996d2d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9af464ae3a95bde95a18b95c8f978b9b\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\348b028698835b843a47f6cbfe6a0e5a\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c308efb1a2e0adb637526ad9f75b1777\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\071560e8b58fb4cc86c3e8eb35a5d8d8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\5c808cfdb7add08f70d0aeae8cbfa74d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\021b8c21f86e56955292deed2ae02610\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0c5be50e4a481a13ebae6066e4917d2f\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\04768703570d826e8846d6f711d65acf\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a7f1c1a1dcee5054e40fd1a85e7be947\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e7e057d197368cd2c37ae47e30afb389\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6fc1524610818808aa7d6b50f6472f62\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\f35be664bf1789606b8eb35633829190\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7f5004169bd55a75e45944b6d07a9b5f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a066d50485feb4751fdd4c64cfde0caa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18f8bc35845af2ca76a041c2e00906ba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ff3e4f57e44f74988042c45d751004a0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\bd09cf35c75d20f95684ae6aa04f6d27\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8b70b47d95aa83023bc8ac40f6e83318\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1d41acd1feeb214f39b4af152e7647a2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1bbf055ed864b3779d7740641f912810\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fa0d9f748980ce4d9fee994ae47d345e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0f28da1c79a9532cd926b1606d2def38\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ae63c4f43ce8221c013a9f3bcd72e038\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9ff524a2d6c5bace2c852250dd126ee4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\df35db96bb278d5c32d93e830fcc8207\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\2a8b89628b6ec9dc0a997ce4438f0f77\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\99bf4c54ec4aa4cca0d02e5f5c776dc0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ba5ba4429829d682b5133c3a10ec80db\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\abdd75fa9eddb7ca55a9499ceb21839e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\226bca4965e4e1466856790b401fb49c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\d1091c7701fe74bb02c3eb56a3f0f54a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\eba0bb06c2409911e45a95e3dfad0422\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\430a7b505f1ee061a9004ca7591df00b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0e0eb805ceed8d7df6824623d33a91d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:4:5-37
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:4:5-37
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.BLUETOOTH
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:22-65
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:5-73
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:5-73
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:22-71
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:22-71
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:5-80
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:22-78
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:5-78
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:5-78
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:5-80
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:22-77
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:5-80
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:5-68
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:5-68
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:22-65
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.INTERNET
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:5-67
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:22-64
 application
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:15:5-35:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18752230ed437cd9f796e9004d98fa71\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18752230ed437cd9f796e9004d98fa71\AndroidManifest.xml:9:5-20
-MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6aa942bfbacf16d2400b87bd51299930\AndroidManifest.xml:9:5-20
-MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6aa942bfbacf16d2400b87bd51299930\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9af464ae3a95bde95a18b95c8f978b9b\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9af464ae3a95bde95a18b95c8f978b9b\AndroidManifest.xml:22:5-23:19
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:15:5-35:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:9:5-20
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:9:5-20
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\df35db96bb278d5c32d93e830fcc8207\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\df35db96bb278d5c32d93e830fcc8207\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:20:9-35
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:18:9-41
 	tools:ignore
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:22:9-60
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:22:9-60
 	android:roundIcon
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:19:9-54
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:17:9-45
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:17:9-45
 	android:allowBackup
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:21:9-59
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:21:9-59
 activity#com.example.beacontest.Main.StartActivity
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:9-30:20
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:9-30:20
 	tools:ignore
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:24:13-47
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:24:13-47
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:19-53
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:19-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:27-74
 activity#com.example.beacontest.Main.SettingActivity
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:9-32:20
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:9-32:20
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:19-55
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:19-55
 activity#com.example.beacontest.Main.Main
-ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:13-34:24
+ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:13-34:24
 	android:name
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:23-48
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:23-48
 uses-sdk
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\29df715384b20cbb724623992280c5e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\29df715384b20cbb724623992280c5e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18752230ed437cd9f796e9004d98fa71\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18752230ed437cd9f796e9004d98fa71\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6aa942bfbacf16d2400b87bd51299930\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6aa942bfbacf16d2400b87bd51299930\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8cb88874ff0da65fbbf862fc88b37d83\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8cb88874ff0da65fbbf862fc88b37d83\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1086a567b0af056c45c0d03a068beaf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1086a567b0af056c45c0d03a068beaf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7d6b79e44dd3f8a12bc0a453e68e71b5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7d6b79e44dd3f8a12bc0a453e68e71b5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e6e052bdf2f37f94062857abde81b287\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e6e052bdf2f37f94062857abde81b287\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1add56fdf3422d00f4f41015e311698\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a1add56fdf3422d00f4f41015e311698\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c134c620327c7b7afc040d8ede7a4acf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c134c620327c7b7afc040d8ede7a4acf\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ed9a1f1916300a47fa3365479252df55\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ed9a1f1916300a47fa3365479252df55\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c44367ec1fb83e8b378369e65cd95f5c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c44367ec1fb83e8b378369e65cd95f5c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\36a5e1fa4a81d28c81b185616e7a1ea6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\36a5e1fa4a81d28c81b185616e7a1ea6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\232d95f53b3a69bc0616fb3bf0bba973\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\232d95f53b3a69bc0616fb3bf0bba973\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fdea7be73904ce0f146d10d629de73b2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fdea7be73904ce0f146d10d629de73b2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6bb012c42ab1088317ad2f3e73fc7def\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6bb012c42ab1088317ad2f3e73fc7def\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\b348b31239abf05d806fcf9d1f996d2d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\b348b31239abf05d806fcf9d1f996d2d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e44b6ab2fe6a66738046e757804685a6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9af464ae3a95bde95a18b95c8f978b9b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9af464ae3a95bde95a18b95c8f978b9b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\348b028698835b843a47f6cbfe6a0e5a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\348b028698835b843a47f6cbfe6a0e5a\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c308efb1a2e0adb637526ad9f75b1777\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\c308efb1a2e0adb637526ad9f75b1777\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\071560e8b58fb4cc86c3e8eb35a5d8d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\071560e8b58fb4cc86c3e8eb35a5d8d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\5c808cfdb7add08f70d0aeae8cbfa74d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\5c808cfdb7add08f70d0aeae8cbfa74d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\021b8c21f86e56955292deed2ae02610\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\021b8c21f86e56955292deed2ae02610\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0c5be50e4a481a13ebae6066e4917d2f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0c5be50e4a481a13ebae6066e4917d2f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\04768703570d826e8846d6f711d65acf\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\04768703570d826e8846d6f711d65acf\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a7f1c1a1dcee5054e40fd1a85e7be947\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a7f1c1a1dcee5054e40fd1a85e7be947\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e7e057d197368cd2c37ae47e30afb389\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\e7e057d197368cd2c37ae47e30afb389\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6fc1524610818808aa7d6b50f6472f62\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\6fc1524610818808aa7d6b50f6472f62\AndroidManifest.xml:20:5-44
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\f35be664bf1789606b8eb35633829190\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\f35be664bf1789606b8eb35633829190\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7f5004169bd55a75e45944b6d07a9b5f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\7f5004169bd55a75e45944b6d07a9b5f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a066d50485feb4751fdd4c64cfde0caa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a066d50485feb4751fdd4c64cfde0caa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18f8bc35845af2ca76a041c2e00906ba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\18f8bc35845af2ca76a041c2e00906ba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ff3e4f57e44f74988042c45d751004a0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ff3e4f57e44f74988042c45d751004a0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\bd09cf35c75d20f95684ae6aa04f6d27\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\bd09cf35c75d20f95684ae6aa04f6d27\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8b70b47d95aa83023bc8ac40f6e83318\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8b70b47d95aa83023bc8ac40f6e83318\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1d41acd1feeb214f39b4af152e7647a2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1d41acd1feeb214f39b4af152e7647a2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1bbf055ed864b3779d7740641f912810\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\1bbf055ed864b3779d7740641f912810\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fa0d9f748980ce4d9fee994ae47d345e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\fa0d9f748980ce4d9fee994ae47d345e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0f28da1c79a9532cd926b1606d2def38\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0f28da1c79a9532cd926b1606d2def38\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ae63c4f43ce8221c013a9f3bcd72e038\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ae63c4f43ce8221c013a9f3bcd72e038\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9ff524a2d6c5bace2c852250dd126ee4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\9ff524a2d6c5bace2c852250dd126ee4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\df35db96bb278d5c32d93e830fcc8207\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\df35db96bb278d5c32d93e830fcc8207\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\2a8b89628b6ec9dc0a997ce4438f0f77\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\2a8b89628b6ec9dc0a997ce4438f0f77\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\99bf4c54ec4aa4cca0d02e5f5c776dc0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\99bf4c54ec4aa4cca0d02e5f5c776dc0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ba5ba4429829d682b5133c3a10ec80db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\ba5ba4429829d682b5133c3a10ec80db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\abdd75fa9eddb7ca55a9499ceb21839e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\abdd75fa9eddb7ca55a9499ceb21839e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\226bca4965e4e1466856790b401fb49c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\226bca4965e4e1466856790b401fb49c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\d1091c7701fe74bb02c3eb56a3f0f54a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\d1091c7701fe74bb02c3eb56a3f0f54a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\eba0bb06c2409911e45a95e3dfad0422\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\eba0bb06c2409911e45a95e3dfad0422\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\430a7b505f1ee061a9004ca7591df00b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\430a7b505f1ee061a9004ca7591df00b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0e0eb805ceed8d7df6824623d33a91d6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0e0eb805ceed8d7df6824623d33a91d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
