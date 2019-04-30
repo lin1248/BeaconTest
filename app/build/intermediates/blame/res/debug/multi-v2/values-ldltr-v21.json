@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "outputFile": "C:\\Users\\mumu\\OneDrive\\Documents\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-2\\files-2.1\\29df715384b20cbb724623992280c5e5\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-2\\files-2.1\\8075464fa07d321b16b927655756f8fe\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
