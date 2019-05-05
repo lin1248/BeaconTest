@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/setting_background">
+    android:background="@drawable/layout_blue">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/setting_toolbar"
@@ -53,6 +53,11 @@
             android:textColorHint="#AAAAAA"
             android:singleLine="true"
             android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/KMeaning"
+            android:textColor="@color/colorAccent"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,6 +80,11 @@
             android:singleLine="true"
             android:textColor="#000000"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/HMeaning"
+            android:textColor="@color/colorAccent"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,6 +107,11 @@
             android:singleLine="true"
             android:textColor="#000000"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tMeaning"
+            android:textColor="@color/colorAccent"/>
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"

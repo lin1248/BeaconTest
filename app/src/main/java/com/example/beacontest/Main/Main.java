@@ -40,11 +40,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.beacontest.Constant.Coordinate;
+import com.example.beacontest.Constant.HistoryPoint;
 import com.example.beacontest.Function.GetOrientation;
 import com.example.beacontest.Function.KNN;
 import com.example.beacontest.Function.RotateBitmap;
 import com.example.beacontest.R;
 import com.example.beacontest.View.DrawView;
+
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 
@@ -56,6 +58,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -70,6 +73,8 @@ import static com.example.beacontest.Constant.TAG.TAG_1;
 import static com.example.beacontest.Constant.TAG.TAG_3;
 import static com.example.beacontest.Constant.TAG.dbName;
 import static com.example.beacontest.Constant.TAG.url;
+import static com.example.beacontest.DM.DM.QuerryDataBase;
+import static com.example.beacontest.DM.DM.QuerryTime;
 
 
 public class Main extends AppCompatActivity {
@@ -85,11 +90,13 @@ public class Main extends AppCompatActivity {
     private static int netTimes=0;
     private static Boolean pathEnable=false;
     private static Coordinate[] LocationSet=new Coordinate[100];
+    private static final int Setting_code=0;
+    private static final int request_enabled = 1;//定义一个int resultCode
+    private static final int History_code=2;
 
     private Message msg_timer,msg_showXY;
     private BluetoothAdapter mBluetoothAdapter;
     private GetOrientation getOrientation = new GetOrientation();
-    private static final int request_enabled = 1;//定义一个int resultCode
     private MyHanlder myHanlder = new MyHanlder();
     private SensorManager sm = null;
 
@@ -110,7 +117,7 @@ public class Main extends AppCompatActivity {
     private ImageView imageView_ori;
     private TextView tv_x,tv_y,tv_K;
     private TextView tv_statue;
-    private Button btn_location,btn_setting;
+    private Button btn_location,btn_setting,btn_database;
 
     /**
      * 提取蓝牙广播包数据
@@ -182,7 +189,7 @@ public class Main extends AppCompatActivity {
                         msg_showXY.what = 3;
                         myHanlder.sendMessage(msg_showXY);//更新XY的显示
 
-                        initUI((float) locationPoint.getX(), (float) locationPoint.getY(), true, pathEnable);
+                        initUI((float) locationPoint.getX(), (float) locationPoint.getY(), true, pathEnable,false);
                     }
                     else {
                         Coordinate locationPoint = knn.KNN(_ADD7, _A7F3, _AD9F, _7D19, K, H);
@@ -232,6 +239,7 @@ public class Main extends AppCompatActivity {
                     msg_timer=Message.obtain();
                     msg_timer.what=1;
                     mHandler.sendMessage(msg_timer);
+                    closeLocate();//关闭定位
                     Log.i(TAG_1, "run: timer done!");
                 }
             };
@@ -250,7 +258,7 @@ public class Main extends AppCompatActivity {
             switch(msg.what) {
                 case 1:
                     Toast.makeText(Main.this,"搜索Beacon超时",Toast.LENGTH_LONG).show();
-                    Log.i(TAG_1, "handleMessage: timer done!");
+                    Log.i(TAG_1, "handleMessage: out of time!!!!");
                     break;
             }
         }
@@ -261,7 +269,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.final_layout);
+        setContentView(R.layout.layout_main);
         //获取权限
         RxPermissions rxPermissions=new RxPermissions(this);
         rxPermissions.request(Manifest.permission.BLUETOOTH_ADMIN,
@@ -282,44 +290,52 @@ public class Main extends AppCompatActivity {
 
         btn_location=findViewById(R.id.btn_location);
         btn_setting=findViewById(R.id.btn_setting);
+        btn_database=findViewById(R.id.btn_database);
+        btn_database.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (locationEnable) {
+                    Toast.makeText(Main.this, "请先停止定位", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (QuerryResult().size() > 0) {
+                        Intent intent = new Intent(Main.this, DatabaseActivity.class);
+                        startActivityForResult(intent,History_code);
+                    } else {
+                        Toast.makeText(Main.this, "历史记录为空", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
         btn_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (locationEnable) {//关闭定位
-                    stopTimer();
-                    locationEnable = false;
-                    Message msg=Message.obtain();
-                    msg.what=8;
-                    myHanlder.sendMessage(msg);
-                    initUI(0, 0, false,pathEnable);
+                    closeLocate();
                 } else {//开始定位
-                    Message msg=Message.obtain();
-                    msg.what=7;
-                    myHanlder.sendMessage(msg);
-                    startTimer();
-                    Log.i(TAG_1, "onClick: timer start!");
-                    locationEnable = true;
-                    //LocationSet=new Coordinate[t];
+                   enableLocate();
                 }
             }
         });
         btn_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String path;
-                Intent intent = new Intent(Main.this, SettingActivity.class);
-                intent.putExtra("K", K + "");
-                intent.putExtra("H", H + "");
-                intent.putExtra("t", t + "");
-                if(pathEnable){
-                    path=1+"";
+                if (locationEnable) {
+                    Toast.makeText(Main.this, "请先停止定位", Toast.LENGTH_SHORT).show();
+                } else {
+                    String path;
+                    Intent intent = new Intent(Main.this, SettingActivity.class);
+                    intent.putExtra("K", K + "");
+                    intent.putExtra("H", H + "");
+                    intent.putExtra("t", t + "");
+                    if (pathEnable) {
+                        path = 1 + "";
+                    } else {
+                        path = 0 + "";
+                    }
+                    intent.putExtra("pathEnable", path);
+                    intent.putExtra("netServerSwitch", netServerSwitch + "");
+                    startActivityForResult(intent, Setting_code);
                 }
-                else {
-                    path=0+"";
-                }
-                intent.putExtra("pathEnable",path);
-                intent.putExtra("netServerSwitch", netServerSwitch + "");
-                startActivityForResult(intent, 0);
             }
         });
         copyDB(dbName);//复制数据库
@@ -387,7 +403,7 @@ public class Main extends AppCompatActivity {
         msg_init.what=2;
         myHanlder.sendMessage(msg_init);
 
-        initUI(0,0,false,pathEnable);//初始化UI
+        initUI(0, 0, false, pathEnable,false);//初始化UI
         //initWakeLock();
         //初始化唤醒锁
         init_bluetooth();
@@ -395,23 +411,40 @@ public class Main extends AppCompatActivity {
 
     }
 
-/*    *//**
-     * 初始化唤醒锁
-     *//*
-    @SuppressLint("InvalidWakeLockTag")
-    private void initWakeLock() {
-        if (null == mWakeLock) {
-            PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-            mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK |
-                            PowerManager.ON_AFTER_RELEASE,
-                    "mainLockService");
-            if(null!=mWakeLock){
-//                mWakeLock.acquire();
-//                另一种方式
-                mWakeLock.acquire(60 * 10 * 1000);
-            }
-        }
-    }*/
+    /**
+     * 查询数据库
+     * @return
+     */
+    private List<HistoryPoint> QuerryResult(){
+        List<HistoryPoint> pointList=QuerryDataBase();
+        Log.i(TAG_1, "QuerryResult: "+pointList);
+        return pointList;
+    }
+    /**
+     * 开始定位
+     */
+    private void enableLocate(){
+        Message msg=Message.obtain();
+        msg.what=7;
+        myHanlder.sendMessage(msg);
+        startTimer();
+        Log.i(TAG_1, "onClick: timer start!");
+        locationEnable = true;
+        //LocationSet=new Coordinate[t];
+    }
+
+    /**
+     * 关闭定位
+     */
+    private void closeLocate(){
+        stopTimer();
+        locationEnable = false;
+        Message msg=Message.obtain();
+        msg.what=8;
+        myHanlder.sendMessage(msg);
+        view.storeData();
+        initUI(0, 0, false,pathEnable,false);
+    }
 
     /**
      * 获取方向
@@ -503,7 +536,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == request_enabled) {
+        if (requestCode == request_enabled) {//蓝牙响应返回值
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "打开蓝牙成功！", Toast.LENGTH_SHORT).show();
                 Log.i(TAG_1, "打开蓝牙成功! ");
@@ -515,7 +548,7 @@ public class Main extends AppCompatActivity {
                 Log.i(TAG_1, "打开蓝牙异常！");
             }
         }
-        if(requestCode == 0){
+        if(requestCode == Setting_code){//设置页面返回值
             if (resultCode == Activity.RESULT_OK) {
                 K= Integer.valueOf(data.getStringExtra("K"));
                 H= Integer.valueOf(data.getStringExtra("H"));
@@ -542,6 +575,25 @@ public class Main extends AppCompatActivity {
                     Log.i(TAG_1, "onActivityResult: 6 " +netServerSwitch);
                 }
                 Log.d(TAG_1, "onActivityReenter: "+K+H+netServerSwitch);
+            }
+        }
+        if(requestCode == History_code){//历史路径返回值
+            if (resultCode == Activity.RESULT_OK) {
+                String date=data.getStringExtra("date");
+                Log.i("TAG", "Main:数据 "+date);
+                HistoryPoint historyPoint=QuerryTime(date);
+                float[] oldY=historyPoint.getoldY();
+                float[] oldX=historyPoint.getoldX();
+                int num=historyPoint.getNum();
+                view.setOldX(oldX);
+                view.setOldY(oldY);
+                view.setHistory_num(num);
+                if(num<=0){
+                    Log.e("TAG", "onActivityResult: 数据无效" );
+                }else {
+                    initUI(oldX[num - 1], oldY[num - 1], true, pathEnable, true);//画出历史路径
+                }
+
             }
         }
     }
@@ -636,14 +688,14 @@ public class Main extends AppCompatActivity {
      * @param y
      * @param drawType
      */
-    private void initUI(float x,float y,boolean drawType,boolean pathEnable) {
+    private void initUI(float x,float y,boolean drawType,boolean pathEnable,boolean mod_history) {
         view.setPathEnable(pathEnable);
         view.setX(x);
         view.setY(y);
         view.setDrawType(drawType);
+        view.setMod_history(mod_history);
         view.invalidate();
     }
-
 
     /**
      *
@@ -687,7 +739,7 @@ public class Main extends AppCompatActivity {
                             msg_showXY.what=3;
                             myHanlder.sendMessage(msg_showXY);
 
-                            initUI((float) _x[0], (float) _y[0], true,pathEnable);
+                            initUI((float) _x[0], (float) _y[0], true,pathEnable,false);
                         } catch (JSONException e) {
                             //做自己的请求异常操作，如Toast提示（“无网络连接”等）
                             Log.e(TAG_1, e.getMessage(), e);

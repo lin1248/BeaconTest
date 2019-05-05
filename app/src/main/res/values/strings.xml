@@ -24,4 +24,10 @@
     <string name="path">路径</string>
     <string name="show">显示</string>
     <string name="noShow">不显示</string>
+    <string name="historyPath">历史路径</string>
+    <string name="time">时间</string>
+    <string name="deleteData">删除数据</string>
+    <string name="tMeaning">(本地定位时去抖的次数)</string>
+    <string name="KMeaning">(选择K个最邻近测量值的点)</string>
+    <string name="HMeaning">(历史定位点的H个单位点半径内)</string>
 </resources>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:2:1-11:12
@@ -32,63 +32,63 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\mumu\.gradle\caches
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\430a7b505f1ee061a9004ca7591df00b\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0e0eb805ceed8d7df6824623d33a91d6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
 	package
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:4:5-37
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:4:5-37
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-37:12
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:22-65
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:5:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:5-73
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:5-73
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:22-71
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:6:22-71
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:5-80
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:22-78
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:8:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:5-78
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:5-78
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:5-80
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:22-77
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:5-80
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:5-80
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:22-78
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:5-68
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:5-68
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:22-65
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:5-67
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:13:22-64
 application
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:15:5-35:19
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:15:5-36:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:9:5-20
 MERGED from [com.github.tbruyelle:rxpermissions:0.10.2] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\001806dd26bca0b1246023f8fa230996\AndroidManifest.xml:9:5-20
@@ -100,47 +100,51 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\mumu\.grad
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\53f921d220988fdeae67adaddeab68b1\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:20:9-35
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:18:9-41
 	tools:ignore
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:22:9-60
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:22:9-60
 	android:roundIcon
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:19:9-54
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:17:9-45
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:17:9-45
 	android:allowBackup
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:21:9-59
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:21:9-59
 activity#com.example.beacontest.Main.StartActivity
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:9-30:20
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:9-30:20
 	tools:ignore
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:24:13-47
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:24:13-47
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:19-53
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:23:19-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:28:27-74
 activity#com.example.beacontest.Main.SettingActivity
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:9-32:20
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:9-32:20
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:19-55
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:31:19-55
 activity#com.example.beacontest.Main.Main
-ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:13-34:24
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:13-34:24
 	android:name
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:23-48
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:33:23-48
+activity#com.example.beacontest.Main.DatabaseActivity
+ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:35:9-58
+	android:name
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml:35:19-56
 uses-sdk
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\8075464fa07d321b16b927655756f8fe\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\a968ca9ec90f0b80c856c0c187b456fc\AndroidManifest.xml:5:5-7:41
@@ -197,13 +201,13 @@ MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\trans
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\0e0eb805ceed8d7df6824623d33a91d6\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\mumu\.gradle\caches\transforms-2\files-2.1\09211b0b7cea1bcfbff8f65b306713f7\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\mumu\OneDrive\Documents\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		ADDED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Work\GraduationProject\App\BeaconTest\app\src\main\AndroidManifest.xml

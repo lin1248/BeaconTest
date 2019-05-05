@@ -10,6 +10,7 @@ public class TAG {
     public static final String TAG_test = "test";
     public static final String TAG_request = "request";
     public static final String TAG_start = "start";
+    public static final String TAG_DB = "DB";
 
     public static String North = "北";
     public static String South = "南";

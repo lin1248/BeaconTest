@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mumu\\OneDrive\\Documents\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
+            "outputFile": "D:\\Work\\GraduationProject\\App\\BeaconTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ms\\values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mumu\\.gradle\\caches\\transforms-2\\files-2.1\\8075464fa07d321b16b927655756f8fe\\res\\values-ms\\values-ms.xml",

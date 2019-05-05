@@ -374,6 +374,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color blue
+color blueDark
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -642,6 +643,7 @@ drawable ic_keyboard_backspace_white_24dp
 drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable layout_blue
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -695,6 +697,9 @@ id beginning
 id blocking
 id bottom
 id btn_back
+id btn_back_history
+id btn_database
+id btn_deleteData
 id btn_location
 id btn_save
 id btn_setting
@@ -712,6 +717,8 @@ id content
 id contentPanel
 id custom
 id customPanel
+id database_listview
+id database_toolbar
 id decor_content_parent
 id default_activity_button
 id dimensions
@@ -824,6 +831,7 @@ id top
 id topPanel
 id tv_K
 id tv_statue
+id tv_time
 id tv_x
 id tv_y
 id uniform
@@ -865,7 +873,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout final_layout
+layout database_main
+layout layout_main
+layout listitem_main
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -882,7 +892,9 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string H
+string HMeaning
 string K
+string KMeaning
 string KNNChoice
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -928,7 +940,9 @@ string back
 string calcInLocal
 string calcInServer
 string cancelLine
+string deleteData
 string drawLine
+string historyPath
 string local
 string modification
 string net
@@ -945,6 +959,8 @@ string startLocation
 string status_bar_notification_info_overflow
 string stopLocation
 string t
+string tMeaning
+string time
 string x
 string y
 style AlertDialog_AppCompat
